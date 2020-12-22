@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useMemo } from 'react'
 import { AudioPlayerContext, Modal } from '@/components'
-import { FILE_ERROR_MODAL_ID } from '../../constants'
+import { FILE_ERROR_MODAL_ID } from '@/constants'
 
 import './FileErrorModal.scss'
 

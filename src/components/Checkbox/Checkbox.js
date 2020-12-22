@@ -1,6 +1,6 @@
 import React from 'react'
 import { bool, func, string } from 'prop-types'
-import { classNames, noop } from '../../utils'
+import { classNames, noop } from '@/utils'
 
 import './Checkbox.scss'
 

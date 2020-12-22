@@ -11,7 +11,7 @@ import {
   Icon,
   Overlay
 } from '@/components'
-import { classNames } from '../../utils'
+import { classNames } from '@/utils'
 
 import './DropFileOverlay.scss'
 

@@ -15,7 +15,7 @@ import {
 	clamp,
 	norm,
 	PropsArray
-} from '../../utils'
+} from '@/utils'
 
 const THREE = {
 	...three,

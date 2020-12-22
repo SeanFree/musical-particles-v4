@@ -11,7 +11,7 @@ import {
 	Icon,
 	MenuContext
 } from '@/components'
-import { TRACK_INFO_MODAL_ID } from '../../constants'
+import { TRACK_INFO_MODAL_ID } from '@/constants'
 
 import './TrackInfo.scss'
 

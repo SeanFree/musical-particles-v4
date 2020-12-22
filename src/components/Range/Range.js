@@ -7,7 +7,7 @@ import {
 	fadeIn,
 	nearestMultiple,
   noop
-} from '../../utils'
+} from '@/utils'
 
 import './Range.scss'
 

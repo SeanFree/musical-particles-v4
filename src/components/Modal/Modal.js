@@ -2,7 +2,7 @@
 import React, { useEffect, useContext, useRef } from 'react'
 import { bool, func, string } from 'prop-types'
 import { Icon, MenuContext, Overlay } from '@/components'
-import { classNames, noop } from '../../utils'
+import { classNames, noop } from '@/utils'
 import { AudioPlayerContext } from '../AudioCore/AudioCore'
 
 import './Modal.scss'

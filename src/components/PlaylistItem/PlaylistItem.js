@@ -1,7 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {
   useContext,
+	useEffect,
   useMemo,
+	useRef,
   useState
 } from 'react'
 import { number, string } from 'prop-types'
@@ -11,8 +13,8 @@ import {
   Icon,
   MenuContext
 } from '@/components'
-import { DELETE_TRACK_MODAL_ID } from '../../constants'
-import { classNames } from '../../utils'
+import { DELETE_TRACK_MODAL_ID } from '@/constants'
+import { classNames } from '@/utils'
 
 import './PlaylistItem.scss'
 
@@ -42,13 +44,13 @@ export const PlaylistItem = ({
     updateTrackInfo
   } = useContext(AudioPlayerContext)
 	const { isOpen, open } = useContext(MenuContext)
+	const titleInputRef = useRef(null)
 	const deleteModalOpen = isOpen(DELETE_TRACK_MODAL_ID)
 	const isCurrentTrack = currentTrack && currentTrack.index === index
 	const playbackIcon = isPlaying && isCurrentTrack ? 'pause' : 'play_arrow'
 	const editIcon = isEditing ? 'check' : 'edit'
 
 	const toggleEdit = () => {
-		isEditing && updateTrackInfo(index, formData.title || title, formData.artist || artist)
 		setIsEditing(!isEditing)
 		setIsEditingTrack(!isEditing)
 	}
@@ -60,6 +62,11 @@ export const PlaylistItem = ({
 			artist,
 			title
 		})
+	}
+
+	const handleInputKeyDown = e => {
+		e.key === 'Escape' && cancelEdits()
+		e.key === 'Enter' && toggleEdit()
 	}
 
 	const handlePlaybackClick = () =>
@@ -102,6 +109,11 @@ export const PlaylistItem = ({
 		'mp-focus-highlight': true
 	})
 
+	useEffect(() => {
+		isEditing && titleInputRef.current.focus()
+		!isEditing && updateTrackInfo(index, formData.title || title, formData.artist || artist)
+	}, [isEditing])
+
 	return useMemo(() =>
 		<li className="mp-playlist-item">
 			<Button
@@ -137,8 +149,9 @@ export const PlaylistItem = ({
 								value={formData.title}
 								placeholder={title}
 								onChange={handleTitleChange}
-								onKeyDown={e => e.key === 'Escape' && cancelEdits()}
-								tabIndex={tabIndex} />
+								onKeyDown={handleInputKeyDown}
+								tabIndex={tabIndex}
+								ref={titleInputRef} />
 							<input
 								className="mp-playlist-item__artist mp-playlist-item__input mp-focus-highlight"
 								type="text"
@@ -146,7 +159,7 @@ export const PlaylistItem = ({
 								value={formData.artist}
 								placeholder={artist}
 								onChange={handleArtistChange}
-								onKeyDown={e => e.key === 'Escape' && cancelEdits()}
+								onKeyDown={handleInputKeyDown}
 								tabIndex={tabIndex} />
 						</>
 					: (
@@ -189,6 +202,7 @@ export const PlaylistItem = ({
 	, [
 		currentTrack,
 		deleteModalOpen,
+		isEditing,
 		isEditingTrack,
 		tabIndex,
 		trackList,

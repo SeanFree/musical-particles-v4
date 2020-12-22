@@ -1,6 +1,6 @@
 import React, { useContext, useMemo } from 'react'
 import { AudioPlayerContext, Icon, Modal } from '@/components'
-import { TRACK_INFO_MODAL_ID } from '../../constants'
+import { TRACK_INFO_MODAL_ID } from '@/constants'
 
 import './TrackInfoModal.scss'
 

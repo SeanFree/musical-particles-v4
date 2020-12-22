@@ -14,12 +14,12 @@ import {
 	SMOOTHING_TIME_CONSTANT,
 	FFT_SIZE,
 	START_GAIN
-} from '../../constants'
+} from '@/constants'
 import {
   audioFileReader,
   shuffle,
   sortByAsc
-} from '../../utils'
+} from '@/utils'
 
 const playthroughOptions = ['repeat', 'repeat_one', 'shuffle']
 const audioId = 'mp-audio-core'
@@ -248,6 +248,7 @@ export const AudioCore = ({ children }) => {
 
 	const providerValue = {
 		analyser,
+		setIsLoading,
 		isLoading,
 		isPlaying,
 		audioReady,

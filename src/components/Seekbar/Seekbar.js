@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useMemo } from 'react'
 import { string } from 'prop-types'
-import { classNames, hhmmss } from '../../utils'
+import { classNames, hhmmss } from '@/utils'
 import { AudioPlayerContext, Range } from '@/components'
 
 import './Seekbar.scss'

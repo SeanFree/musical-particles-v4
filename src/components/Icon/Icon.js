@@ -1,6 +1,6 @@
 import React from 'react'
 import { oneOf, string } from 'prop-types'
-import { classNames } from '../../utils'
+import { classNames } from '@/utils'
 
 import './Icon.scss'
 

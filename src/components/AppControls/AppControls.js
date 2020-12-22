@@ -8,7 +8,7 @@ import {
   PARTICLE_MENU_ID,
   PLAYLIST_MENU_ID,
   APP_INFO_MODAL_ID
-} from '../../constants'
+} from '@/constants'
 import { string } from 'prop-types'
 
 import './AppControls.scss'

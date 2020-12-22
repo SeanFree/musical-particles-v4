@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { bool, func, oneOf, string } from 'prop-types'
-import { classNames, noop } from '../../utils'
+import { classNames, noop } from '@/utils'
 
 import './Button.scss'
 

@@ -2,7 +2,7 @@ import {
   clamp,
   getSpectrumWidth,
   norm
-} from '../../utils'
+} from '@/utils'
 
 export class AnalyserReader {
 	constructor (analyser) {

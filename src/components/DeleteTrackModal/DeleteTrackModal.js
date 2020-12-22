@@ -6,7 +6,7 @@ import {
 	MenuContext,
 	Modal
 } from '@/components'
-import { DELETE_TRACK_MODAL_ID, PLAYLIST_MENU_ID } from '../../constants'
+import { DELETE_TRACK_MODAL_ID, PLAYLIST_MENU_ID } from '@/constants'
 
 import './DeleteTrackModal.scss'
 

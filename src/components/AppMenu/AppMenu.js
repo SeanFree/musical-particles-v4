@@ -4,7 +4,7 @@ import React, {
 	useEffect,
 	useState
 } from 'react'
-import { classNames } from '../../utils'
+import { classNames } from '@/utils'
 import {
   AppControls,
   AudioPlayerControls,

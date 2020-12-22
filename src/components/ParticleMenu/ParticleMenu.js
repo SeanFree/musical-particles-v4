@@ -13,8 +13,8 @@ import {
   SliderMenu,
   Range
 } from '@/components'
-import { PARTICLE_MENU_ID } from '../../constants'
-import { floor } from '../../utils'
+import { PARTICLE_MENU_ID } from '@/constants'
+import { floor } from '@/utils'
 
 import './ParticleMenu.scss'
 import { Dropdown } from '../Dropdown/Dropdown'
@@ -347,5 +347,5 @@ export const ParticleMenu = () => {
 				</li>
 			</ul>
 		</SliderMenu>
-	, [options, _isOpen])
+	, [options, _isOpen, isEditingTrack])
 }

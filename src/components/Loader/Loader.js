@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useMemo } from 'react'
 import { AudioPlayerContext } from '@/components'
-import { classNames } from '../../utils'
+import { classNames } from '@/utils'
 
 import './Loader.scss'
 

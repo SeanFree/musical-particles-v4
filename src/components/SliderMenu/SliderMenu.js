@@ -2,7 +2,7 @@
 import React, { useContext, useEffect } from 'react'
 import { string } from 'prop-types'
 import { AudioPlayerContext, MenuContext } from '@/components'
-import { classNames } from '../../utils'
+import { classNames } from '@/utils'
 
 import './SliderMenu.scss'
 

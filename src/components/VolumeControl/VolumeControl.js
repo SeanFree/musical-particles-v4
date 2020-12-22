@@ -6,8 +6,8 @@ import React, {
 } from 'react'
 import { func, number, string } from 'prop-types'
 import { AudioPlayerContext, Icon, Range } from '@/components'
-import { START_GAIN } from '../../constants'
-import { ceil } from '../../utils'
+import { START_GAIN } from '@/constants'
+import { ceil } from '@/utils'
 
 import './VolumeControl.scss'
 

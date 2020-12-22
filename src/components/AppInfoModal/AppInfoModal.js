@@ -11,8 +11,8 @@ import {
 	Modal,
 	Icon
 } from '@/components'
-import { APP_INFO_MODAL_ID } from '../../constants'
-import items from './appInfoItems.json'
+import { APP_INFO_MODAL_ID } from '@/constants'
+import { items } from './appInfoItems'
 
 import './AppInfoModal.scss'
 

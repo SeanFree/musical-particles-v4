@@ -1,6 +1,6 @@
 import React from 'react'
 import { arrayOf, func, shape, string } from 'prop-types'
-import { classNames } from '../../utils'
+import { classNames } from '@/utils'
 
 import './Dropdown.scss'
 

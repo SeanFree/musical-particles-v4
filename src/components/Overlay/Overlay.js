@@ -1,6 +1,6 @@
 import React from 'react'
 import { bool, func, string } from 'prop-types'
-import { classNames } from '../../utils'
+import { classNames } from '@/utils'
 
 import './Overlay.scss'
 
