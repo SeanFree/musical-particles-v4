@@ -75,6 +75,8 @@ export const Range = ({
 	const handleWheel = ({ deltaY }) => {
 		const valueDelta = deltaY > 0 ? -step : step
 
+		inputRef.current.focus()
+
 		handleChange(clamp(value + valueDelta, minValue, maxValue))
 	}
 
