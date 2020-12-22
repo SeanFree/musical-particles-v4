@@ -1,0 +1,16 @@
+.mp-seekbar {
+	display: flex;
+	align-items: center;
+	max-width: 720px;
+	width: 100%;
+
+	&__range {
+		flex: 1;
+		margin: 0 $space-l;
+	}
+
+	&__time {
+		filter: drop-shadow(0 0 2px $gray-10);
+		font-size: $size-s;
+	}
+}

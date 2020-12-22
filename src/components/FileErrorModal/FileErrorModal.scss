@@ -1,0 +1,28 @@
+.mp-file-error-modal {
+	&__header {
+		border-bottom: 1px solid $gray-6;
+		margin-bottom: $space-m;
+		padding-bottom: $space-s;
+	}
+
+	&__item {
+		display: flex;
+		font-size: $size-s;
+		justify-content: space-between;
+		margin-bottom: $space-xs;
+	}
+
+	&__item-name {
+		margin-right: $space-m;
+		text-align: left;
+	}
+
+	&__item-type {
+		font-style: italic;
+		text-align: right;
+	}
+
+	.modal__body {
+		padding: $space-m;
+	}
+}

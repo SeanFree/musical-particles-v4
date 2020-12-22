@@ -1,0 +1,19 @@
+.mp-track-info-modal {
+	.mp-modal__body {
+		max-width: 500px;
+	}
+
+	&__image {
+		border-radius: 4px;
+		margin-bottom: $space-l;
+		overflow: hidden;
+
+		img {
+			display: block;
+			height: auto;
+			object-fit: contain;
+			position: relative;
+			width: 100%;
+		}
+	}
+}

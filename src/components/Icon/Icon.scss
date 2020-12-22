@@ -1,0 +1,17 @@
+$icon-sizes: (
+	"xs": 0.875rem,
+	"s": 1.125rem,
+	"m": 1.5rem,
+	"l": 2rem,
+	"xl": 3rem,
+	"2xl": 4.5rem,
+	"3xl": 6rem
+);
+
+.mp-icon {
+	@each $key, $value in $icon-sizes {
+		&--#{$key}.material-icons {
+			font-size: $value;
+		}
+	}
+}

@@ -1,0 +1,10 @@
+.mp-delete-track-modal {
+	&__message {
+		font-size: $size-m * 1.25;
+		margin-bottom: $space-l;
+	}
+
+	.mp-button {
+		margin-right: $space-l;
+	}
+}

@@ -1,0 +1,77 @@
+$checkbox-check-area-size: $size-m;
+
+.mp-checkbox {
+	cursor: pointer;
+	position: relative;
+
+	&__label {
+    align-items: center;
+		display: flex;
+		outline: 0;
+    position: relative;
+
+		&::after,
+		&::before {
+			content: "";
+			cursor: pointer;
+			display: inline-block;
+		}
+
+		&::after {
+			border: solid $cyan-2;
+			border-width: 0 0 2px 2px;
+			height: 4px;
+			left: 10px;
+			opacity: 0;
+			position: absolute;
+			transform: translateY(-50%) translateX(-50%) rotate(-45deg);
+			transition: opacity $transition-duration-s;
+			top: 6px;
+			width: 10px;
+			z-index: 100;
+		}
+
+		&::before {
+			background: $gray-9;
+			border-radius: $space-xs;
+      height: $checkbox-check-area-size;
+      left: 0;
+			top: 0;
+			width: $checkbox-check-area-size;
+		}
+	}
+
+	&:focus-within &__label::before {
+		filter: drop-shadow(0 0 4px $white);
+	}
+
+  &__label-text {
+    margin-left: $space-l;
+  }
+
+  &--align-right &__label-text {
+    margin-left: 0;
+    margin-right: auto;
+    order: 0;
+  }
+
+  &--align-right &__label:before {
+    margin-left: $space-l;
+    order: 1;
+  }
+
+  &--align-right &__label:after {
+    left: initial;
+    right: -4px;
+  }
+
+	&__input {
+    margin: 0;
+    position: absolute;
+		visibility: hidden;
+	}
+
+	&__input:checked + &__label::after {
+		opacity: 1;
+	}
+}

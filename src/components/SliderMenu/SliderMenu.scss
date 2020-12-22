@@ -1,0 +1,19 @@
+.mp-slider-menu {
+	background: $gray-10;
+	border-bottom-left-radius: 4px;
+	max-height: calc(100vh - #{$space-2xl + $space-m});
+	opacity: 0;
+	overflow: hidden;
+	padding: $space-m;
+	position: absolute;
+	pointer-events: none;
+	right: 0;
+	transform: translateX($space-3xl);
+	transition: opacity $transition-duration-s, transform $transition-duration-s;
+
+	&--open {
+		opacity: 0.75;
+		pointer-events: auto;
+		transform: translateX(0);
+	}
+}

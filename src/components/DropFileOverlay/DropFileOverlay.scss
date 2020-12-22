@@ -1,0 +1,32 @@
+$drop-file-overlay-gutter-size: $space-3xl;
+
+.mp-drop-file-overlay {
+	pointer-events: none;
+
+	.mp-overlay__content {
+		height: 100vh;
+		position: absolute;
+		width: 100vw;
+	}
+
+	&__droparea {
+		border: 2px dashed $cyan-3;
+		border-radius: $space-s;
+		display: block;
+		height: calc(100% - #{$drop-file-overlay-gutter-size});
+		left: 0.5 * $drop-file-overlay-gutter-size;
+		pointer-events: none;
+		position: absolute;
+		top: 0.5 * $drop-file-overlay-gutter-size;
+		width: calc(100% - #{$drop-file-overlay-gutter-size});
+	}
+
+	&__icon {
+		color: $cyan-4;
+		left: 50%;
+		pointer-events: none;
+		position: absolute;
+		top: 50%;
+		transform: translateX(-50%) translateY(-50%);
+	}
+}

@@ -1,0 +1,51 @@
+.mp-track-info {
+	align-items: center;
+	display: flex;
+	flex: 1;
+	margin-right: $space-s;
+
+	&__open {
+		border-radius: 2px;
+		display: block;
+		height: 2 * $size-l;
+		flex-shrink: 0;
+		margin-right: $space-m;
+		overflow: hidden;
+		width: 2 * $size-l;
+	}
+
+	&__image {
+		background-color: $gray-9;
+		cursor: pointer;
+		flex-shrink: 0;
+		pointer-events: none;
+		position: relative;
+
+		img {
+			display: block;
+			height: 100%;
+			object-fit: contain;
+			transition: transform $transition-duration-s;
+			width: 100%;
+		}
+	}
+
+	&__open:hover &__image img,
+	&__open:focus &__image img {
+		transform: scale(1.15);
+	}
+
+	&__title,
+	&__artist {
+		filter: drop-shadow(0 0 2px $gray-10);
+	}
+
+	&__title {
+		font-size: $size-s;
+		margin-bottom: $space-s;
+	}
+
+	&__artist {
+		font-size: $size-xs;
+	}
+}

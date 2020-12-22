@@ -1,0 +1,40 @@
+$range-control-thumb-size: $size-2xs;
+
+.mp-range {
+	&__input {
+		border-radius: $space-xs;
+		cursor: pointer;
+		padding: $space-s 0;
+	}
+
+	&__track {
+		background: $gray-7;
+		height: $space-xs;
+		width: 100%;
+		pointer-events: none;
+		position: relative;
+	}
+
+	&__fill {
+		background-color: $cyan-3;
+		height: $space-xs;
+	}
+
+	&__thumb {
+		height: $range-control-thumb-size;
+		width: $range-control-thumb-size;
+		border-radius: 50%;
+		background: $white;
+		cursor: pointer;
+		opacity: 0;
+		position: absolute;
+		transform:
+			translateX(-0.5 * $range-control-thumb-size)
+			translateY(calc(-0.5 * #{$range-control-thumb-size} - 1px));
+		transition: opacity $transition-duration-s;
+	}
+
+	&:hover &__thumb {
+		opacity: 1;
+	}
+}

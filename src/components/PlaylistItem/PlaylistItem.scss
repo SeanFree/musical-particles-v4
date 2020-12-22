@@ -1,0 +1,75 @@
+.mp-playlist-item {
+	align-items: center;
+	background-color: $gray-10;
+	display: flex;
+	opacity: 0.75;
+	padding: $space-m;
+	transition: opacity $transition-duration-s;
+
+	&:hover,
+	&:focus-within {
+		opacity: 1;
+	}
+
+	&:not(:first-child) {
+		border-top: 1px solid $gray-9;
+	}
+
+	&__image {
+		border-radius: 2px;
+		margin-right: $space-m;
+		overflow: hidden;
+
+		img {
+			display: block;
+			height: 2 * $size-l;
+			width: 2 * $size-l;
+		}
+	}
+
+	&__info {
+		font-size: $size-s;
+		margin-right: $space-xl;
+	}
+
+	&__controls {
+		margin-left: auto;
+	}
+
+	&__btn {
+		background: transparent;
+		border: 0;
+		color: $white;
+		cursor: pointer;
+		padding: $space-xs;
+
+		&--playback {
+			margin-right: $space-m;
+		}
+
+		&--edit {
+			margin-right: $space-xs;
+		}
+
+		&--highlight {
+			color: $cyan-2;
+		}
+
+		.mp-icon {
+			display: block;
+		}
+	}
+
+	&__title {
+		margin-bottom: $space-s;
+	}
+
+	&__input {
+		background-color: transparent;
+		border: 0;
+		border-bottom: 1px solid $cyan-2;
+		color: $white;
+		display: block;
+		font-family: "Open Sans", sans-serif;
+	}
+}

@@ -1,0 +1,35 @@
+.mp-app-menu {
+	bottom: 0;
+	opacity: 0;
+	padding: $space-m 0;
+	pointer-events: none;
+	position: fixed;
+	transform: translateY($space-s);
+	transition: opacity $transition-duration-s, transform $transition-duration-s;
+	width: 100%;
+
+	&--open {
+		opacity: 0.75;
+		pointer-events: auto;
+		transform: translateY(0);
+
+		&:hover,
+		&:focus-within {
+			opacity: 1;
+		}
+	}
+
+	&__wrapper {
+		align-items: flex-end;
+		display: flex;
+		justify-content: space-between;
+
+		> * {
+			flex: 1;
+		}
+
+		.mp-audio-controls {
+			flex: 2;
+		}
+	}
+}

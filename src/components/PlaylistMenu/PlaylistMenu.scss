@@ -1,0 +1,73 @@
+.mp-playlist-menu {
+	background-color: transparent;
+	display: flex;
+	flex-direction: column;
+	font-size: $size-s;
+	height: auto;
+	min-width: 360px;
+	padding: 0;
+
+	&.mp-slider-menu--open {
+		opacity: 1;
+	}
+
+	&__header {
+		background-color: $gray-10;
+		border-bottom: 1px solid $gray-9;
+		display: flex;
+		opacity: 0.75;
+		padding: $space-m;
+		width: 100%;
+
+		&:hover,
+		&:focus-within {
+			opacity: 1;
+		}
+	}
+
+	&__list {
+		height: 100%;
+		overflow-y: scroll;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+
+	&__add-label {
+		cursor: pointer;
+		display: flex;
+		margin-left: auto;
+		outline: 0;
+	}
+
+	&__add-label:focus &__add-icon {
+		filter: drop-shadow(0 0 4px $white);
+	}
+
+	&__add-msg {
+		margin: $space-s * 1.5 $space-m 0 0;
+		opacity: 0;
+		pointer-events: none;
+		transform: translateX($space-xs);
+		transition: opacity $transition-duration-s, transform $transition-duration-s;
+	}
+
+	&__add-label:hover &__add-msg {
+		opacity: 1;
+		pointer-events: auto;
+		transform: translateX(0);
+	}
+
+	&__no-tracks {
+		padding: $space-l;
+	}
+
+	&__message {
+		font-style: italic;
+		margin-bottom: $space-s;
+	}
+}

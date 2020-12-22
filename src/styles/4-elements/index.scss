@@ -1,0 +1,31 @@
+html, body {
+	color: $white;
+	font-family: "Open Sans", sans-serif;
+	font-size: 16px;
+	overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 800;
+	margin-bottom: $space-l;
+}
+
+h1 {
+	font-size: $size-2xl;
+}
+
+h2 {
+	font-size: $size-xl;
+}
+
+h3 {
+	font-size: $size-l;
+}
+
+h4 {
+	font-size: $size-l;
+}
+
+h5 {
+	font-size: $size-l;
+}

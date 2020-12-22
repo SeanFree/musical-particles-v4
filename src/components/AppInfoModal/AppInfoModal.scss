@@ -1,0 +1,48 @@
+.mp-app-info-modal {
+	&__heading {
+		align-items: center;
+		display: flex;
+		font-size: $size-2xl;
+
+		.mp-icon {
+			color: $cyan-2;
+			margin-right: $space-m;
+		}
+	}
+
+	&__disclaimer {
+		max-width: 396px;
+		padding: $space-xl 0;
+		font-size: $size-s;
+		font-style: italic;
+		font-weight: bold;
+
+		.mp-icon {
+			color: $amber-2;
+			float: left;
+			height: $space-xl;
+			margin-right: $space-m;
+		}
+	}
+
+	&__item {
+		justify-content: space-between;
+		border-bottom: 1px solid $gray-8;
+		display: flex;
+		padding: $space-m 0;
+
+		&:last-child {
+			border: 0;
+		}
+	}
+
+	&__binding {
+		font-weight: 800;
+		font-style: italic;
+		padding-right: $space-m * .75;
+	}
+
+	&__btn-start {
+		width: 100%;
+	}
+}

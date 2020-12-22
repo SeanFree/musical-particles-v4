@@ -1,0 +1,35 @@
+.mp-modal {
+	&--disable-close .mp-overlay__background {
+		pointer-events: none;
+	}
+
+	&__body {
+		background-color: $gray-10;
+		border-radius: $space-s;
+		display: inline-block;
+		left: 50%;
+		opacity: 0.75;
+		padding: $space-l;
+		position: relative;
+		transform: translateX(-50%) translateY($space-m);
+		transition: transform $transition-duration-s;
+		width: auto;
+	}
+
+	&--open &__body {
+		transform: translateX(-50%) translateY(0);
+	}
+
+	&__close {
+		background-color: $gray-9;
+		border: 0;
+		border-radius: 50%;
+		cursor: pointer;
+		color: white;
+		display: flex;
+		padding: $space-xs;
+		position: absolute;
+		right: -$space-m;
+		top: -$space-m;
+	}
+}

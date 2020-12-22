@@ -1,0 +1,33 @@
+.mp-audio-controls {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	margin: 0 $space-m;
+	position: relative;
+	width: 100%;
+
+	&__items {
+		align-items: center;
+		display: flex;
+		margin-bottom: $space-m;
+		padding-left: $space-m;
+	}
+
+	&__item {
+		margin-right: $space-l;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__control {
+		background-color: transparent;
+		border: 0;
+		filter: drop-shadow(0 0 4px $gray-10);
+		color: white;
+		cursor: pointer;
+		display: flex;
+		padding: 0;
+	}
+}

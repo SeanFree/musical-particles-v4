@@ -1,0 +1,15 @@
+.mp-dropdown {
+	&__select {
+		background: $gray-9;
+		border: 1px solid $gray-8;
+		border-radius: 2px;
+		color: $white;
+		display: block;
+		font-family: "Open Sans", sans-serif;
+		padding: $space-xs;
+	}
+
+	option:hover {
+		background-color: $cyan-4;
+	}
+}

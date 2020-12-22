@@ -1,0 +1,18 @@
+@import "sr-only";
+
+.no-select {
+	user-select: none;
+}
+
+.mp-reactive-control {
+	cursor: pointer;
+
+	&:active {
+		transform: scale(0.85);
+	}
+}
+
+.mp-focus-highlight:focus {
+	filter: drop-shadow(0 0 4px $amber-1);
+	outline: 0;
+}

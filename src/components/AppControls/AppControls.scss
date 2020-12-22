@@ -1,0 +1,19 @@
+.mp-app-controls {	
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+
+	&__item:not(:last-child) {
+		margin-right: $space-m;
+	}
+
+	&__control {
+		background-color: transparent;
+		border: 0;
+		filter: drop-shadow(0 0 4px $gray-10);
+		color: white;
+		cursor: pointer;
+		display: flex;
+		padding: 0;
+	}
+}
