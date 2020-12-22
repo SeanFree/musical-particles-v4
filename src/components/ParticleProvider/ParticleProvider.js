@@ -11,6 +11,10 @@ import { AudioPlayerContext } from '@/components'
 import { ParticleRenderer } from './ParticleRenderer'
 import { AnalyserReader } from './AnalyserReader'
 
+import cNoiseLibShader from '@/shaders/cnoise.glsl'
+import particlesVertexShader from '@/shaders/particles.vert'
+import particlesFragmentShader from '@/shaders/particles.frag'
+
 import './ParticleProvider.scss'
 
 const defaultOptions = {
@@ -38,11 +42,6 @@ const defaultOptions = {
 }
 
 export const ParticleContext = createContext()
-
-const cNoiseLibShader = document.querySelector('#lib-cnoise').textContent
-const noiseUtilShader = document.querySelector('#util-noise').textContent
-const particlesVertexShader = document.querySelector('#vert-particles').textContent
-const particlesFragmentShader = document.querySelector('#frag-particles').textContent
 
 export const ParticleProvider = ({ children }) => {
 	const id = 'mp-canvas'
@@ -87,7 +86,6 @@ export const ParticleProvider = ({ children }) => {
         new AnalyserReader(analyser),
         options,
         cNoiseLibShader +
-				noiseUtilShader +
         particlesVertexShader,
         particlesFragmentShader
       )
