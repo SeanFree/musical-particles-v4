@@ -75,8 +75,8 @@ export const PlaylistMenu = () => {
 	}
 
 	useEffect(() => {
-		_isOpen && trackLabel.current
-			? trackLabel.current.focus()
+		_isOpen
+			? trackLabel.current && trackLabel.current.focus()
 			: document.activeElement.blur()
 	}, [_isOpen])
 

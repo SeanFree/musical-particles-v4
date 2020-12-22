@@ -36,9 +36,9 @@ export const Modal = ({
 		close(id)
 
 	useEffect(() => {
-		(_isOpen && closeRef.current
-			? closeRef.current
-			: window).focus()
+		_isOpen
+			? closeRef.current && closeRef.current.focus()
+			:	document.activeElement.blur()
 	}, [_isOpen])
 
 	useEffect(() => {
