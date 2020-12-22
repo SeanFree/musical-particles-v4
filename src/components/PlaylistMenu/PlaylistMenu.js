@@ -12,8 +12,8 @@ import {
   PlaylistItem,
   SliderMenu
 } from '@/components'
-import { APP_INFO_MODAL_ID, PLAYLIST_MENU_ID } from '../../constants'
-import { fetchFile } from '../../utils'
+import { APP_INFO_MODAL_ID, PLAYLIST_MENU_ID } from '@/constants'
+import { fetchFile } from '@/utils'
 
 import './PlaylistMenu.scss'
 
@@ -36,6 +36,7 @@ export const PlaylistMenu = () => {
 		addTracks,
 		isEditingTrack,
 		isPlaying,
+		setIsLoading,
 		trackList,
 		userInitialized
 	} = useContext(AudioPlayerContext)
@@ -52,6 +53,8 @@ export const PlaylistMenu = () => {
 		addTracks([...e.target.files])
 
 	const loadStarterTracks = () => {
+		setIsLoading(true)
+
 		Promise.all(
 			starterTrackFileNames.map(async fileName => {
 				const blob = await fetchFile(fileName)
