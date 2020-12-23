@@ -50,19 +50,20 @@ export const ParticleProvider = ({ children }) => {
 	const renderer = useRef(null)
 	const canvasRef = useRef(null)
 
-	const updateOptions = newOptions => {
+	const updateOptions = (key, value) =>
 		setOptions(_options => ({
 			..._options,
-			...newOptions
+			[key]: value
 		}))
-	}
 
-	const updateOption = (key, value) => updateOptions({ [key]: value })	
+	const setOption = (key, value) => {
+		renderer.current.setOption(key, value)
+		updateOptions(key, value)
+	}
 
 	const providerValue = {
 		options,
-		updateOption,
-		updateOptions
+		setOption
 	}
 
 	useEffect(() => {
@@ -72,12 +73,6 @@ export const ParticleProvider = ({ children }) => {
 
 		return () => canvasRef.current.removeEventListener('mousedown', blurActiveElement)
 	}, [audioReady])
-
-	useEffect(() => {
-		if (audioReady) {
-			renderer.current.setOptions(options)
-		}
-	}, [options])	
 
   useEffect(() => {
     if (audioReady) {

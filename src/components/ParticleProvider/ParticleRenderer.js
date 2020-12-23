@@ -33,27 +33,24 @@ export class ParticleRenderer {
 
     this.setup()
 	}
-	setOptions (options) {
-		this.uniforms.u_hueRange.value = options.hueRange
-		this.uniforms.u_particleSizeMin.value = options.particleSizeMin
-		this.uniforms.u_particleSizeScale.value = options.particleSizeScale
-		this.uniforms.u_applyNoise.value = options.applyNoise
-		this.uniforms.u_noiseScale.value = options.noiseScale
-		this.uniforms.u_displacementScale.value = options.displacementScale
-		this.uniforms.u_frequencyScale.value = options.frequencyScale
-		this.uniforms.u_frequencyAvgScale.value = options.frequencyAvgScale
-		this.uniforms.u_particleDirection.value = options.particleDirection
-		this.uniforms.u_particleSpeed.value = options.particleSpeed
-		this.uniforms.u_displacementDirection.value = options.displacementDirection
-		this.camera.fov = options.fov
-		this.camera.updateProjectionMatrix()
+	setUniform (name, value) {
+		this.uniforms[name].value = value
+	}
+	setOption (name, value) {
+		this.options[name] = value
 
-		if (this.options.particleTexture !== options.particleTexture) {
-			this.options.particleTexture = options.particleTexture
-			this.uniforms.u_texture.value = this.textureLoader.load(require(`../../assets/${this.options.particleTexture}.png`).default)
+		switch (name) {
+			case 'fov':
+				this.camera.fov = value
+				this.camera.updateProjectionMatrix()
+				break
+			case 'particleTexture':
+				this.currentTexture =
+					this.textureLoader.load(require(`../../assets/${value}.png`).default)
+				break
+			default:
+				break
 		}
-
-		this.options = options
 	}
 	setup () {
 		this._run = this.run.bind(this)
@@ -190,27 +187,54 @@ export class ParticleRenderer {
 		return [age, life]
 	}
 	createMesh () {
-    this.defaultTexture = this.textureLoader.load(require(`../../assets/${this.options.particleTexture}.png`).default)
+		const self = this
+
+    this.currentTexture = this.textureLoader.load(require(`../../assets/${this.options.particleTexture}.png`).default)
 		this.uniforms = {
 			u_bass: { value: 0. },
 			u_mid: { value: 0. },
 			u_treble: { value: 0. },
 			u_frequencyAvg: { value: 0. },
-			u_frequencyScale: { value: this.options.frequencyScale },
-			u_frequencyAvgScale: { value: this.options.frequencyAvgScale },
-			u_hueRange: { value: this.options.hueRange },
-			u_hueStart: { value: .2 },
-			u_noiseScale: { value: this.options.noiseScale },
 			u_time: { value: 0.0 },
-			u_texture: { value: this.defaultTexture },
-			u_particleSizeMin: { value: this.options.particleSizeMin },
-			u_particleSizeScale: { value: this.options.particleSizeScale },
-			u_applyNoise: { value: this.options.applyNoise },
-			u_displacementScale: { value: this.options.displacementScale },
-			u_particleDirection: { value: this.options.particleDirection },
-			u_particleSpeed: { value: this.options.particleSpeed },
-			u_displacementDirection: { value: this.options.displacementDirection },
-			u_resolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) }
+			get u_frequencyScale () {
+				return { value: self.options.frequencyScale }
+			},
+			get u_frequencyAvgScale () {
+				return { value: self.options.frequencyAvgScale }
+			},
+			get u_hueRange () {
+				return { value: self.options.hueRange }
+			},
+			get u_hueStart () {
+				return { value: .2 }
+			},
+			get u_noiseScale () {
+				return { value: self.options.noiseScale }
+			},
+			get u_texture () { 
+				return { value: self.currentTexture }
+			},
+			get u_particleSizeMin () {
+				return { value: self.options.particleSizeMin }
+			},
+			get u_particleSizeScale () {
+				return { value: self.options.particleSizeScale }
+			},
+			get u_applyNoise () {
+				return { value: self.options.applyNoise }
+			},
+			get u_displacementScale () {
+				return { value: self.options.displacementScale }
+			},
+			get u_particleDirection () {
+				return { value: self.options.particleDirection }
+			},
+			get u_particleSpeed () {
+				return { value: self.options.particleSpeed }
+			},
+			get u_displacementDirection () {
+				return { value: self.options.displacementDirection }
+			}
 		}
 
 		this.material = new THREE.ShaderMaterial({
@@ -237,8 +261,8 @@ export class ParticleRenderer {
 		this.scene.add(this.mesh)
 	}
 	resize () {
-		this.el.width = this.uniforms.u_resolution.x = window.innerWidth
-		this.el.height = this.uniforms.u_resolution.y = window.innerHeight
+		this.el.width = window.innerWidth
+		this.el.height = window.innerHeight
 
 		this.camera.aspect = window.innerWidth / window.innerHeight
 		this.camera.updateProjectionMatrix()

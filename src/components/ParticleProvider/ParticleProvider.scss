@@ -3,12 +3,4 @@
 	position: absolute;
 	transition: background-color $transition-duration-s;
 	width: 100vw;
-
-	&--dark {
-		background-color: $black;
-	}
-
-	&--light {
-		background-color: $white;
-	}
 }

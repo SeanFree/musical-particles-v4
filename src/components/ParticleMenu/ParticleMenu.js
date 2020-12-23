@@ -30,7 +30,7 @@ const fovSelector = '#rng-fov .mp-range__input'
 
 export const ParticleMenu = () => {
 	const { toggle, isOpen } = useContext(MenuContext)
-	const { options, updateOption } = useContext(ParticleContext)
+	const { options, setOption } = useContext(ParticleContext)
 	const { isEditingTrack, userInitialized } = useContext(AudioPlayerContext)
 	const _isOpen = isOpen(PARTICLE_MENU_ID)
 	const tabIndex = _isOpen ? '0' : '-1'
@@ -62,7 +62,7 @@ export const ParticleMenu = () => {
 				<li className="mp-particle-menu__item">
 					<Range
 						className="mp-particle-menu__range"
-						handleChange={value => updateOption('fov', floor(value))}
+						handleChange={value => setOption('fov', floor(value))}
 						id="rng-fov"
 						labelText="Field of View"
 						step={1}
@@ -77,7 +77,7 @@ export const ParticleMenu = () => {
 				<li className="mp-particle-menu__item">
 					<Dropdown
 						className="mp-particle-menu__dropdown"
-						handleChange={value => updateOption('particleTexture', value)}
+						handleChange={value => setOption('particleTexture', value)}
 						id="particleTexture"
 						labelText="Particle Texture"
 						options={particleTextureOptions}
@@ -86,7 +86,7 @@ export const ParticleMenu = () => {
 				<li className="mp-particle-menu__item">
 					<Dropdown
 						className="mp-particle-menu__dropdown"
-						handleChange={value => updateOption('positioning', value)}
+						handleChange={value => setOption('positioning', value)}
 						id="positioning"
 						labelText="Particle Positioning"
 						options={positioningOptions}
@@ -95,7 +95,7 @@ export const ParticleMenu = () => {
 				<li className="mp-particle-menu__item">
 					<Dropdown
 						className="mp-particle-menu__dropdown"
-						handleChange={value => updateOption('particleDirection', +value)}
+						handleChange={value => setOption('particleDirection', +value)}
 						id="particleDirection"
 						labelText="Particle Direction"
 						options={particleDirectionOptions}
@@ -104,7 +104,7 @@ export const ParticleMenu = () => {
 				<li className="mp-particle-menu__item">
 					<Range
 						className="mp-particle-menu__range"
-						handleChange={value => updateOption('particleSpeed', value)}
+						handleChange={value => setOption('particleSpeed', value)}
 						id="rng-particle-speed"
 						labelText="Particle Speed"
 						step={.1}
@@ -119,7 +119,7 @@ export const ParticleMenu = () => {
 				<li className="mp-particle-menu__item">
 					<Range
 						className="mp-particle-menu__range"
-						handleChange={value => updateOption('spawnRadius', value)}
+						handleChange={value => setOption('spawnRadius', value)}
 						id="rng-spawn-radius"
 						labelText="Spawn Radius"
 						step={1}
@@ -134,7 +134,7 @@ export const ParticleMenu = () => {
 				<li className="mp-particle-menu__item">
 					<Range
 						className="mp-particle-menu__range"
-						handleChange={value => updateOption('spawnSpread', value)}
+						handleChange={value => setOption('spawnSpread', value)}
 						id="rng-spawn-spread"
 						labelText="Spawn Spread"
 						step={1}
@@ -149,7 +149,7 @@ export const ParticleMenu = () => {
 				<li className="mp-particle-menu__item">
 					<Range
 						className="mp-particle-menu__range"
-						handleChange={value => updateOption('bassRotation', value)}
+						handleChange={value => setOption('bassRotation', value)}
 						id="rng-bass-rotation"
 						labelText="Bass Rotation"
 						step={0.01}
@@ -164,7 +164,7 @@ export const ParticleMenu = () => {
 				<li className="mp-particle-menu__item">
 					<Range
 						className="mp-particle-menu__range"
-						handleChange={value => updateOption('midRotation', value)}
+						handleChange={value => setOption('midRotation', value)}
 						id="rng-mid-rotation"
 						labelText="Mid Rotation"
 						step={0.01}
@@ -179,7 +179,7 @@ export const ParticleMenu = () => {
 				<li className="mp-particle-menu__item">
 					<Range
 						className="mp-particle-menu__range"
-						handleChange={value => updateOption('trebleRotation', value)}
+						handleChange={value => setOption('trebleRotation', value)}
 						id="rng-treble-rotation"
 						labelText="Treble Rotation"
 						step={0.01}
@@ -194,7 +194,7 @@ export const ParticleMenu = () => {
 				<li className="mp-particle-menu__item">
 					<Range
 						className="mp-particle-menu__range"
-						handleChange={value => updateOption('hueRange', +value)}
+						handleChange={value => setOption('hueRange', +value)}
 						id="rng-hue-range"
 						labelText="Hue Range"
 						step={0.1}
@@ -209,7 +209,7 @@ export const ParticleMenu = () => {
 				<li className="mp-particle-menu__item">
 					<Range
 						className="mp-particle-menu__range"
-						handleChange={value => updateOption('particleLifeMin', +value)}
+						handleChange={value => setOption('particleLifeMin', +value)}
 						id="rng-particle-life-min"
 						labelText="Particle Life Min"
 						step={1}
@@ -224,7 +224,7 @@ export const ParticleMenu = () => {
 				<li className="mp-particle-menu__item">
 					<Range
 						className="mp-particle-menu__range"
-						handleChange={value => updateOption('particleLifeMax', +value)}
+						handleChange={value => setOption('particleLifeMax', +value)}
 						id="rng-particle-life-max"
 						labelText="Particle Life Max"
 						step={1}
@@ -239,7 +239,7 @@ export const ParticleMenu = () => {
 				<li className="mp-particle-menu__item">
 					<Range
 						className="mp-particle-menu__range"
-						handleChange={value => updateOption('particleSizeMin', +value)}
+						handleChange={value => setOption('particleSizeMin', +value)}
 						id="rng-particle-size-min"
 						labelText="Particle Size Min"
 						step={1}
@@ -254,7 +254,7 @@ export const ParticleMenu = () => {
 				<li className="mp-particle-menu__item">
 					<Range
 						className="mp-particle-menu__range"
-						handleChange={value => updateOption('particleSizeScale', +value)}
+						handleChange={value => setOption('particleSizeScale', +value)}
 						id="rng-particle-size-scale"
 						labelText="Particle Size Scale"
 						step={0.05}
@@ -273,13 +273,13 @@ export const ParticleMenu = () => {
 						id="chk-apply-noise"
 						isChecked={options.applyNoise}
 						labelText="Apply Noise"
-						handleChange={isChecked => updateOption('applyNoise', isChecked)}
+						handleChange={isChecked => setOption('applyNoise', isChecked)}
 						tabIndex={tabIndex} />
 				</li>
 				<li className="mp-particle-menu__item">
 					<Range
 						className="mp-particle-menu__range"
-						handleChange={value => updateOption('noiseScale', +value)}
+						handleChange={value => setOption('noiseScale', +value)}
 						id="rng-noise-scale"
 						labelText="Noise Scale"
 						step={0.05}
@@ -294,7 +294,7 @@ export const ParticleMenu = () => {
 				<li className="mp-particle-menu__item">
 					<Range
 						className="mp-particle-menu__range"
-						handleChange={value => updateOption('displacementScale', +value)}
+						handleChange={value => setOption('displacementScale', +value)}
 						id="rng-displacement-scale"
 						labelText="Displacement Scale"
 						step={0.05}
@@ -309,7 +309,7 @@ export const ParticleMenu = () => {
 				<li className="mp-particle-menu__item">
 					<Dropdown
 						className="mp-particle-menu__dropdown"
-						handleChange={value => updateOption('displacementDirection', +value)}
+						handleChange={value => setOption('displacementDirection', +value)}
 						id="displacementDirection"
 						labelText="Displacement Direction"
 						options={displacementDirectionOptions}
@@ -318,7 +318,7 @@ export const ParticleMenu = () => {
 				<li className="mp-particle-menu__item">
 					<Range
 						className="mp-particle-menu__range"
-						handleChange={value => updateOption('frequencyScale', +value)}
+						handleChange={value => setOption('frequencyScale', +value)}
 						id="rng-frequency-scale"
 						labelText="Frequency Scale"
 						step={.1}
@@ -333,7 +333,7 @@ export const ParticleMenu = () => {
 				<li className="mp-particle-menu__item">
 					<Range
 						className="mp-particle-menu__range"
-						handleChange={value => updateOption('frequencyAvgScale', +value)}
+						handleChange={value => setOption('frequencyAvgScale', +value)}
 						id="rng-frequency-avg-scale"
 						labelText="Frequency Avg Scale"
 						step={.1}
