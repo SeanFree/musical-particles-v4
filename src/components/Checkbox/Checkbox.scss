@@ -26,13 +26,14 @@ $checkbox-check-area-size: $size-m;
 			position: absolute;
 			transform: translateY(-50%) translateX(-50%) rotate(-45deg);
 			transition: opacity $transition-duration-s;
-			top: 6px;
+			top: 7px;
 			width: 10px;
 			z-index: 100;
 		}
 
 		&::before {
 			background: $gray-9;
+			border: 1px solid $gray-8;
 			border-radius: $space-xs;
       height: $checkbox-check-area-size;
       left: 0;
@@ -62,7 +63,7 @@ $checkbox-check-area-size: $size-m;
 
   &--align-right &__label:after {
     left: initial;
-    right: -4px;
+    right: -3px;
   }
 
 	&__input {

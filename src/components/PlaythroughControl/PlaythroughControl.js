@@ -7,7 +7,7 @@ import React, {
 import { AudioPlayerContext, Icon } from '@/components'
 import { string } from 'prop-types'
 
-export const PlaythroughControl = ({ tabIndex }) => {
+const PlaythroughControl = ({ tabIndex }) => {
 	const {
 		changePlaythroughType,
 		currentTrack,
@@ -15,8 +15,9 @@ export const PlaythroughControl = ({ tabIndex }) => {
     playthroughType,
 		userInitialized
   } = useContext(AudioPlayerContext)
-	const handleKeyDown = ({ key }) =>
+	const handleKeyDown = ({ key, ctrlKey }) =>
 		!isEditingTrack &&
+		ctrlKey &&
 		key === 't' &&
 		changePlaythroughType()	
 
@@ -48,3 +49,5 @@ PlaythroughControl.propTypes = {
 PlaythroughControl.defaultProps = {
 	tabIndex: '0'
 }
+
+export { PlaythroughControl }

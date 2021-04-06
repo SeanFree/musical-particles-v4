@@ -7,12 +7,12 @@ import React, {
 import { oneOf, string } from 'prop-types'
 import { AudioPlayerContext, Icon } from '@/components'
 
-export const SkipControl = ({ tabIndex, type }) => {
+const SkipControl = ({ tabIndex, type }) => {
 	const iconName = `skip_${type}`
 	const { playlistIndex, skipPrev, skipNext, trackList, userInitialized } = useContext(AudioPlayerContext)
 	const handleKeyDown = type === 'previous'
-		? ({ key }) => key === 'ArrowLeft' && skipPrev()
-		: ({ key }) => key === 'ArrowRight' && skipNext()
+		? ({ key, ctrlKey }) => ctrlKey && key === 'ArrowLeft' && skipPrev()
+		: ({ key, ctrlKey }) => ctrlKey && key === 'ArrowRight' && skipNext()
 
 	useEffect(() => {
 		if (userInitialized) {
@@ -24,7 +24,6 @@ export const SkipControl = ({ tabIndex, type }) => {
 	
 	return useMemo(() =>
 		<button
-			onKeyDown={e => e.stopPropagation()}
 			className="mp-audio-controls__control mp-reactive-control mp-focus-highlight"
 			onClick={type === 'previous' ? skipPrev : skipNext}
 			tabIndex={tabIndex}>
@@ -43,3 +42,5 @@ SkipControl.propTypes = {
 SkipControl.defaultProps = {
 	tabIndex: '0'
 }
+
+export { SkipControl }

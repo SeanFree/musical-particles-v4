@@ -41,9 +41,9 @@ const defaultOptions = {
 	frequencyAvgScale: 3.5
 }
 
-export const ParticleContext = createContext()
+const ParticleContext = createContext()
 
-export const ParticleProvider = ({ children }) => {
+const ParticleProvider = ({ children }) => {
 	const id = 'mp-canvas'
 	const { analyser, audioReady } = useContext(AudioPlayerContext)
 	const [options, setOptions] = useState(defaultOptions)
@@ -97,3 +97,5 @@ export const ParticleProvider = ({ children }) => {
 		</ParticleContext.Provider>
  , [options, renderer.current])
 }
+
+export { ParticleContext, ParticleProvider }

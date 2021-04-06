@@ -22,7 +22,7 @@ const THREE = {
 	OrbitControls
 }
 
-export class ParticleRenderer {
+class ParticleRenderer {
 	constructor (el, reader, options, vertexShader, fragmentShader) {
 		this.el = el
     this.reader = reader
@@ -364,3 +364,5 @@ export class ParticleRenderer {
 		}
 	}
 }
+
+export { ParticleRenderer }

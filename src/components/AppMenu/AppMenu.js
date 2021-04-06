@@ -14,15 +14,15 @@ import { AudioPlayerContext } from '../AudioCore/AudioCore'
 
 import './AppMenu.scss'
 
-export const AppMenu = () => {
+const AppMenu = () => {
 	const { isEditingTrack, userInitialized } = useContext(AudioPlayerContext)
 	const [isOpen, setIsOpen] = useState(false)
 	const tabIndex = isOpen ? '0' : '-1'
-	const handleKeyDown = ({ key }) => {
+	const handleKeyDown = ({ key, altKey }) => {
 		if (!isEditingTrack) {
 			const _isOpen = !isOpen
 			
-			key === 'm' && setIsOpen(_isOpen)
+			altKey && key === 'm' && setIsOpen(_isOpen)
 			!isOpen && window.focus()
 		}
 	}
@@ -54,3 +54,5 @@ export const AppMenu = () => {
 		</aside>
 	)
 }
+
+export { AppMenu }

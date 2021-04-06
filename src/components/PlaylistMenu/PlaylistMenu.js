@@ -25,7 +25,7 @@ const starterTrackFileNames = [
 	'Milky+Way+-+Ramzoid.mp3',
 ]
 
-export const PlaylistMenu = () => {
+const PlaylistMenu = () => {
 	const {
 		isOpen,
 		close,
@@ -44,8 +44,9 @@ export const PlaylistMenu = () => {
 	const tabIndex = _isOpen ? '0' : '-1'
 	const trackInput = useRef(null)
 	const trackLabel = useRef(null)
-	const handleKeyDown = ({ key }) =>
+	const handleKeyDown = ({ key , altKey }) =>
 		!isEditingTrack &&
+		altKey &&
 		key === 'p' &&
 		toggle(PLAYLIST_MENU_ID)
 
@@ -144,3 +145,5 @@ export const PlaylistMenu = () => {
 		</SliderMenu>
 	), [_isOpen, trackList, isPlaying, userInitialized])
 }
+
+export { PlaylistMenu }

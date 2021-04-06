@@ -28,15 +28,16 @@ import {
 
 const fovSelector = '#rng-fov .mp-range__input'
 
-export const ParticleMenu = () => {
+const ParticleMenu = () => {
 	const { toggle, isOpen } = useContext(MenuContext)
 	const { options, setOption } = useContext(ParticleContext)
 	const { isEditingTrack, userInitialized } = useContext(AudioPlayerContext)
 	const _isOpen = isOpen(PARTICLE_MENU_ID)
 	const tabIndex = _isOpen ? '0' : '-1'
 
-	const handleKeyDown = ({ key }) =>
+	const handleKeyDown = ({ key, altKey }) =>
 		!isEditingTrack &&
+		altKey &&
 		key === 'o' &&
 		toggle(PARTICLE_MENU_ID)
 
@@ -349,3 +350,5 @@ export const ParticleMenu = () => {
 		</SliderMenu>
 	, [options, _isOpen, isEditingTrack])
 }
+
+export { ParticleMenu }

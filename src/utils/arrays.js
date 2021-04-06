@@ -17,13 +17,13 @@ Float32Array.prototype.get = function(i = 0, n = 0) {
 	return r
 }
 
-export const shuffle = arr =>
+const shuffle = arr =>
   arr.slice().sort(() => randRange(1))
 
-export const sortByAsc = (arr, key) =>
+const sortByAsc = (arr, key) =>
   arr.slice().sort((a, b) => a[key] < b[key] ? -1 : 1)
 
-export class PropsArray {
+class PropsArray {
 	constructor(count = 0, props = [], type = 'float') {
 		this.count = count
 		this.props = props
@@ -75,3 +75,5 @@ export class PropsArray {
 		}
 	}
 }
+
+export { shuffle, sortByAsc, PropsArray }

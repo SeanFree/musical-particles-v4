@@ -4,7 +4,7 @@ import { classNames, noop } from '@/utils'
 
 import './Button.scss'
 
-export const Button = ({
+const Button = ({
   ariaExpanded,
   ariaHasPopup,
   ariaLabelText,
@@ -63,3 +63,5 @@ Button.defaultProps = {
   tabIndex: '0',
   type: 'primary'
 }
+
+export { Button }

@@ -6,7 +6,7 @@ import { AudioPlayerContext, Range } from '@/components'
 
 import './Seekbar.scss'
 
-export const Seekbar = ({ className, tabIndex }) => {
+const Seekbar = ({ className, tabIndex }) => {
 	const classList = classNames({
 		'mp-seekbar': true,
 		[className]: !!className
@@ -42,3 +42,5 @@ Seekbar.propTypes = {
 Seekbar.defaultProps = {
 	tabIndex: '0'
 }
+
+export { Seekbar }

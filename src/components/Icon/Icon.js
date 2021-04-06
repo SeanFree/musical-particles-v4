@@ -4,7 +4,7 @@ import { classNames } from '@/utils'
 
 import './Icon.scss'
 
-export const Icon = ({ className, name, size }) => {
+const Icon = ({ className, name, size }) => {
 	const classList = classNames({
 		'material-icons': true,
 		'mp-icon': true,
@@ -34,3 +34,5 @@ Icon.propTypes = {
 Icon.defaultProps = {
 	size: 'm'
 }
+
+export { Icon }

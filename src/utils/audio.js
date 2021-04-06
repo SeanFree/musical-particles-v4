@@ -1,10 +1,10 @@
 import jsmediatags from 'jsmediatags'
 import { bufferToObjectURL, floor } from '.'
 
-export const getSpectrumWidth = (frequency, nyquist, domainLength) =>
+const getSpectrumWidth = (frequency, nyquist, domainLength) =>
 	floor(frequency / nyquist * domainLength)
 
-export const audioFileReader = {
+const audioFileReader = {
 	validate (file) {
 		const audio = document.createElement('audio')
 
@@ -77,3 +77,5 @@ export const audioFileReader = {
 		}
 	}
 }
+
+export { getSpectrumWidth, audioFileReader }

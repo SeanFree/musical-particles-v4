@@ -3,8 +3,7 @@ import {
   getSpectrumWidth,
   norm
 } from '@/utils'
-
-export class AnalyserReader {
+class AnalyserReader {
 	constructor (analyser) {
 		if (!(analyser instanceof AnalyserNode)) {
 			throw new TypeError('AnalyserBridge: provided argument is not of type AnalyserNode')
@@ -80,3 +79,5 @@ export class AnalyserReader {
 		}
 	}
 }
+
+export { AnalyserReader }

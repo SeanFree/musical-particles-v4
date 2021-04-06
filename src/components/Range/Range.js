@@ -11,7 +11,7 @@ import {
 
 import './Range.scss'
 
-export const Range = ({
+const Range = ({
 	activeUpdate,
 	className,
 	handleChange,
@@ -168,3 +168,5 @@ Range.defaultProps = {
 	tabIndex: '0',
 	value: 0
 }
+
+export { Range }

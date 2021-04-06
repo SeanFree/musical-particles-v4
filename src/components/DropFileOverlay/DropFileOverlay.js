@@ -5,7 +5,6 @@ import React, {
   useMemo,
   useState
 } from 'react'
-import { func } from 'prop-types'
 import {
   AudioPlayerContext,
   Icon,
@@ -15,7 +14,7 @@ import { classNames } from '@/utils'
 
 import './DropFileOverlay.scss'
 
-export const DropFileOverlay = ({ handleDrop }) => {
+const DropFileOverlay = () => {
 	const { addTracks, userInitialized } = useContext(AudioPlayerContext)
 	const [isDragging, setIsDragging] = useState(false)
 	const classList = classNames({
@@ -69,6 +68,4 @@ export const DropFileOverlay = ({ handleDrop }) => {
 	, [isDragging, userInitialized])
 }
 
-DropFileOverlay.propTypes = {
-	handleDrop: func
-}
+export { DropFileOverlay }

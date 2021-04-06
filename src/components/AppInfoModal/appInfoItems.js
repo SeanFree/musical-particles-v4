@@ -1,19 +1,19 @@
 export const items = [
   {
     description: "Show / Hide App Controls",
-    binding: "u",
+    binding: "alt + u",
   },
   {
     description: "Play / Pause",
-    binding: "Spacebar",
+    binding: "ctrl + Spacebar",
   },
   {
     description: "Skip Next",
-    binding: "Arrow Right",
+    binding: "ctrl + Arrow Right",
   },
   {
     description: "Skip Previous",
-    binding: "Arrow Left",
+    binding: "ctrl + Arrow Left",
   },
   {
     description: "Volume Up / Down",
@@ -21,7 +21,7 @@ export const items = [
   },
   {
     description: "Change Playlist Order",
-    binding: "t",
+    binding: "alt + t",
   },
   {
     description: "Close Dialog / Menu",
@@ -29,19 +29,19 @@ export const items = [
   },
   {
     description: "Show / Hide Player",
-    binding: "m",
+    binding: "alt + m",
   },
   {
     description: "Show / Hide Particle Menu",
-    binding: "o",
+    binding: "alt + o",
   },
   {
     description: "Show / Hide Track List",
-    binding: "p",
+    binding: "alt + p",
   },
   {
     description: "Show / Hide Track Info",
-    binding: "i",
+    binding: "alt + i",
   },
   {
     description: "Zoom Camera",

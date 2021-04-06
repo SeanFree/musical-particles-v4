@@ -26,7 +26,7 @@ const audioId = 'mp-audio-core'
 
 export const AudioPlayerContext = createContext()
 
-export const AudioCore = ({ children }) => {
+const AudioCore = ({ children }) => {
 	const el = useRef(null)
 	const { current: ctx } = useRef(new AudioContext())
 	const { current: analyser } = useRef(ctx.createAnalyser())
@@ -290,3 +290,5 @@ export const AudioCore = ({ children }) => {
 		</AudioPlayerContext.Provider>
 	)
 }
+
+export { AudioCore }

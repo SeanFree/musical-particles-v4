@@ -23,7 +23,7 @@ import {
 } from 'three'
 
 /* eslint-disable */
-export const OrbitControls = function (object, domElement) {
+const OrbitControls = function (object, domElement) {
 
 	this.object = object;
 
@@ -1050,3 +1050,5 @@ Object.defineProperties(OrbitControls.prototype, {
 	}
 
 });
+
+export { OrbitControls }

@@ -5,7 +5,7 @@ import { classNames } from '@/utils'
 
 import './Loader.scss'
 
-export const Loader = () => {
+const Loader = () => {
 	const { isLoading } = useContext(AudioPlayerContext)
 	const classList = classNames({
 		'mp-loader': true,
@@ -24,3 +24,5 @@ export const Loader = () => {
 		</span>
 	), [isLoading])
 }
+
+export { Loader }

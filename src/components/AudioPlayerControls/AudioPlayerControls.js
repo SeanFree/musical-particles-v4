@@ -10,7 +10,7 @@ import { string } from 'prop-types'
 
 import './AudioPlayerControls.scss'
 
-export const AudioPlayerControls = ({ tabIndex }) => {
+const AudioPlayerControls = ({ tabIndex }) => {
 	return (
 		<div className="mp-audio-controls">
 			<ul className="mp-audio-controls__items">
@@ -43,3 +43,5 @@ AudioPlayerControls.propTypes = {
 AudioPlayerControls.defaultProps = {
 	tabIndex: '0'
 }
+
+export { AudioPlayerControls }

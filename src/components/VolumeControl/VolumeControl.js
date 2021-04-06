@@ -18,7 +18,7 @@ const volumeOptions = [
 	'volume_up'
 ]
 
-export const VolumeControl = ({ tabIndex }) => {
+const VolumeControl = ({ tabIndex }) => {
 	const previousVolume = useRef(0)
 	const { gain, changeGain } = useContext(AudioPlayerContext)
 	const onClick = () => (
@@ -74,3 +74,5 @@ VolumeControl.propTypes = {
 VolumeControl.defautProps = {
 	tabIndex: '0'
 }
+
+export { VolumeControl }

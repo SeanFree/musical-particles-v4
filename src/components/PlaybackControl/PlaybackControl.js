@@ -8,7 +8,7 @@ import React, {
 import { string } from 'prop-types'
 import { AudioPlayerContext, Icon } from '@/components'
 
-export const PlaybackControl = ({ tabIndex }) => {
+const PlaybackControl = ({ tabIndex }) => {
 	const { isPlaying, play, pause, userInitialized } = useContext(AudioPlayerContext)
 	const btnRef = useRef(null)
 	const handleKeyDown = (e) =>
@@ -16,6 +16,7 @@ export const PlaybackControl = ({ tabIndex }) => {
 			[window, document.body].includes(document.activeElement) ||
 			btnRef.current.contains(e.target)
 		) &&
+		e.ctrlKey &&
 		e.key === ' ' &&
 		(isPlaying ? pause : play)()
 
@@ -51,3 +52,5 @@ PlaybackControl.propTypes = {
 PlaybackControl.defaultProps = {
 	tabIndex: '0'
 }
+
+export { PlaybackControl }

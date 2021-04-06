@@ -5,7 +5,7 @@ import { FILE_ERROR_MODAL_ID } from '@/constants'
 
 import './FileErrorModal.scss'
 
-export const FileErrorModal = () => {
+const FileErrorModal = () => {
 	const { errorFiles, setErrorFiles } = useContext(AudioPlayerContext)
 	const handleClose = () => setTimeout(() => setErrorFiles([]), 200)
 
@@ -29,3 +29,5 @@ export const FileErrorModal = () => {
 		</Modal>
 	, [errorFiles])
 }
+
+export { FileErrorModal }

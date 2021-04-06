@@ -4,7 +4,7 @@ import { classNames } from '@/utils'
 
 import './Overlay.scss'
 
-export const Overlay = ({
+const Overlay = ({
 	className,
 	children,
 	handleClick,
@@ -41,3 +41,5 @@ Overlay.defaultProps = {
 	isOpen: false,
 	isModal: false
 }
+
+export { Overlay }

@@ -13,7 +13,7 @@ import { string } from 'prop-types'
 
 import './AppControls.scss'
 
-export const AppControls = ({ tabIndex }) => {
+const AppControls = ({ tabIndex }) => {
 	const { isOpen, toggle } = useContext(MenuContext)
 
 	return (
@@ -74,3 +74,5 @@ AppControls.propTypes = {
 AppControls.defaultProps = {
 	tabIndex: '0'
 }
+
+export { AppControls }

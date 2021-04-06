@@ -10,7 +10,7 @@ import { DELETE_TRACK_MODAL_ID, PLAYLIST_MENU_ID } from '@/constants'
 
 import './DeleteTrackModal.scss'
 
-export const DeleteTrackModal = () => {
+const DeleteTrackModal = () => {
 	const { deleteTrack, trackToDelete } = useContext(AudioPlayerContext)
 	const { isOpen, open } = useContext(MenuContext)
 	const { title } = trackToDelete || { title: 'Title Unknown' }
@@ -50,3 +50,5 @@ export const DeleteTrackModal = () => {
 		</Modal>
 	), [tabIndex, trackToDelete])
 }
+
+export { DeleteTrackModal }

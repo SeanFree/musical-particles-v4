@@ -18,7 +18,7 @@ import { classNames } from '@/utils'
 
 import './PlaylistItem.scss'
 
-export const PlaylistItem = ({
+const PlaylistItem = ({
 	album,
 	artist,
 	artwork,
@@ -64,9 +64,9 @@ export const PlaylistItem = ({
 		})
 	}
 
-	const handleInputKeyDown = e => {
-		e.key === 'Escape' && cancelEdits()
-		e.key === 'Enter' && toggleEdit()
+	const handleInputKeyDown = ({ key }) => {
+		key === 'Escape' && cancelEdits()
+		key === 'Enter' && toggleEdit()
 	}
 
 	const handlePlaybackClick = () =>
@@ -223,3 +223,5 @@ PlaylistItem.propTypes = {
 PlaylistItem.defaultProps = {
 	tabIndex: '0'
 }
+
+export { PlaylistItem }

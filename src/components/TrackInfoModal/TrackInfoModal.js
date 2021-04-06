@@ -4,7 +4,7 @@ import { TRACK_INFO_MODAL_ID } from '@/constants'
 
 import './TrackInfoModal.scss'
 
-export const TrackInfoModal = () => {
+const TrackInfoModal = () => {
 	const { currentTrack } = useContext(AudioPlayerContext)
 
 	return useMemo(() =>
@@ -35,3 +35,5 @@ export const TrackInfoModal = () => {
 		</Modal>
 	, [currentTrack])
 }
+
+export { TrackInfoModal }

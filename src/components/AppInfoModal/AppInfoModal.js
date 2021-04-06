@@ -16,15 +16,23 @@ import { items } from './appInfoItems'
 
 import './AppInfoModal.scss'
 
-
-export const AppInfoModal = () => {
+const AppInfoModal = () => {
 	const { open, toggle } = useContext(MenuContext)
 	const { isEditingTrack, userInitialized, setUserInitialized } = useContext(AudioPlayerContext)
 
-	const handleKeyDown = ({ key }) =>
-		!isEditingTrack &&
-		key === 'u' &&
-		toggle(APP_INFO_MODAL_ID)
+
+	const handleKeyDown = ({ altKey, key }) => {
+		switch (true) {
+			case userInitialized && altKey && key === 'u':
+				toggle(APP_INFO_MODAL_ID)
+				break
+			case !userInitialized && key === 'Escape':
+				setUserInitialized(true)
+				break
+			default:
+				break
+		}
+	}
 
 	const handleClose = () => {
 		if (!userInitialized) {
@@ -37,12 +45,10 @@ export const AppInfoModal = () => {
 	}, [])
 
 	useEffect(() => {
-		if (userInitialized) {
-			window.addEventListener('keydown', handleKeyDown)
+		window.addEventListener('keydown', handleKeyDown)
 
-			return () => window.removeEventListener('keydown', handleKeyDown)
-		}
-	}, [userInitialized, toggle])
+		return () => window.removeEventListener('keydown', handleKeyDown)
+	}, [toggle])
 
 	return useMemo(() => (
 		<Modal
@@ -78,3 +84,5 @@ export const AppInfoModal = () => {
 		</Modal>
 	), [isEditingTrack, userInitialized])
 }
+
+export { AppInfoModal }

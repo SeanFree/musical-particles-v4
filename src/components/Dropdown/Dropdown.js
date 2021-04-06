@@ -4,7 +4,7 @@ import { classNames } from '@/utils'
 
 import './Dropdown.scss'
 
-export const Dropdown = ({
+const Dropdown = ({
   className,
   handleChange,
   hideLabel,
@@ -61,3 +61,5 @@ Dropdown.propTypes = {
 Dropdown.defaultProps = {
   tabIndex: '0'
 }
+
+export { Dropdown }

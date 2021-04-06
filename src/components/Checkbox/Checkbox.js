@@ -4,7 +4,7 @@ import { classNames, noop } from '@/utils'
 
 import './Checkbox.scss'
 
-export const Checkbox = ({
+const Checkbox = ({
   alignRight,
   className,
   handleChange,
@@ -65,3 +65,5 @@ Checkbox.defaultProps = {
   isChecked: false,
   tabIndex: '0'
 }
+
+export { Checkbox }

@@ -3,7 +3,6 @@ import React, { useEffect, useContext, useRef } from 'react'
 import { bool, func, string } from 'prop-types'
 import { Icon, MenuContext, Overlay } from '@/components'
 import { classNames, noop } from '@/utils'
-import { AudioPlayerContext } from '../AudioCore/AudioCore'
 
 import './Modal.scss'
 
@@ -15,7 +14,6 @@ export const Modal = ({
 	handleClose
 }) => {
 	const { close, isOpen } = useContext(MenuContext)
-	const { userInitialized } = useContext(AudioPlayerContext)
 	const closeRef = useRef(null)
 	const _isOpen = isOpen(id)
 	const classList = classNames({
@@ -30,24 +28,11 @@ export const Modal = ({
 		close(id)
 	}
 
-	const handleKeyDown = ({ key }) =>
-		!disableClose &&
-		key === 'Escape' &&
-		close(id)
-
 	useEffect(() => {
 		_isOpen
 			? closeRef.current && closeRef.current.focus()
 			:	document.activeElement.blur()
 	}, [_isOpen])
-
-	useEffect(() => {
-		if (userInitialized) {
-			window.addEventListener('keydown', handleKeyDown)
-
-			return () => window.removeEventListener('keydown', handleKeyDown)
-		}
-	}, [userInitialized, close])
 
 	return (
 		<Overlay
