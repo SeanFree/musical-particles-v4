@@ -7,7 +7,7 @@ $checkbox-check-area-size: $size-m;
 	&__label {
     align-items: center;
 		display: flex;
-		outline: 0;
+		outline: none;
     position: relative;
 
 		&::after,

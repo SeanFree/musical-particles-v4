@@ -33,6 +33,7 @@
 		opacity: 0.75;
 		padding: $space-m $space-l;
 		transition: opacity $transition-duration-s;
+		user-select: none;
 
 		> * {
 			width: 100%;
