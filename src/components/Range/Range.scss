@@ -6,7 +6,7 @@ $range-control-thumb-size: $size-2xs;
 		cursor: pointer;
 		overflow: auto;
 		overscroll-behavior: contain;
-		padding: $space-s 0;
+		padding: $space-s $space-m;
 	}
 
 	&__track {
