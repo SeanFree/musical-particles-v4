@@ -4,6 +4,8 @@ $range-control-thumb-size: $size-2xs;
 	&__input {
 		border-radius: $space-xs;
 		cursor: pointer;
+		overflow: auto;
+		overscroll-behavior: contain;
 		padding: $space-s 0;
 	}
 
