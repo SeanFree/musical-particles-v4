@@ -20,7 +20,7 @@ import './ParticleProvider.scss'
 const defaultOptions = {
 	fov: 70,
 	positioning: 'random',
-	particleTexture: 'particle-texture-1',
+	particleTexture: 'as-tex-1',
 	particleDirection: -1,
 	particleSpeed: 3,
 	spawnRadius: 700,

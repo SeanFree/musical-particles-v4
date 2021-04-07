@@ -30,27 +30,27 @@ export const positioningOptions = [{
 
 export const particleTextureOptions = [{
 	id: 'opt-text-1',
-	value: 'particle-texture-1',
+	value: 'as-tex-1',
 	text: 'Texture 1'
 }, {
 	id: 'opt-text-2',
-	value: 'particle-texture-2',
+	value: 'as-tex-2',
 	text: 'Texture 2'
 }, {
 	id: 'opt-text-3',
-	value: 'particle-texture-3',
+	value: 'as-tex-3',
 	text: 'Texture 3'
 }, {
 	id: 'opt-text-4',
-	value: 'particle-texture-4',
+	value: 'as-tex-4',
 	text: 'Texture 4'
 }, {
 	id: 'opt-text-5',
-	value: 'particle-texture-5',
+	value: 'as-tex-5',
 	text: 'Texture 5'
 }, {
 	id: 'opt-text-6',
-	value: 'particle-texture-6',
+	value: 'as-tex-6',
 	text: 'Texture 6'
 }]
 

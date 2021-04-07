@@ -6,7 +6,7 @@ import { classNames, noop } from '@/utils'
 
 import './Modal.scss'
 
-export const Modal = ({
+const Modal = ({
 	className,
 	children,
 	disableClose,
@@ -72,3 +72,5 @@ Modal.defaultProps = {
 	isOpen: false,
 	handleClose: noop
 }
+
+export { Modal }

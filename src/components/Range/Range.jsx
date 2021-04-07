@@ -72,8 +72,10 @@ const Range = ({
 
 	const handleMouseMove = e => handleMouseEventChange(e, activeUpdate && isMouseDown)
 
-	const handleWheel = ({ deltaY }) => {
-		const valueDelta = deltaY > 0 ? -step : step
+	const handleWheel = (e) => {
+		e.nativeEvent.preventDefault()
+
+		const valueDelta = e.deltaY > 0 ? -step : step
 
 		inputRef.current.focus()
 

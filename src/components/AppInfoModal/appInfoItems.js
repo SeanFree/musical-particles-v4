@@ -1,4 +1,4 @@
-export const items = [
+const items = [
   {
     description: "Show / Hide App Controls",
     binding: "alt + u",
@@ -56,3 +56,5 @@ export const items = [
     binding: "Hold Right-click + Drag",
   },
 ]
+
+export { items }
