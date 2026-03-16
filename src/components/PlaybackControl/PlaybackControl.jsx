@@ -3,7 +3,7 @@ import { useContext, useEffect, useMemo, useRef } from 'react'
 import { string } from 'prop-types'
 import { AudioPlayerContext, Icon } from '@/components'
 
-const PlaybackControl = ({ tabIndex }) => {
+const PlaybackControl = ({ tabIndex = '0' }) => {
   const { isPlaying, play, pause, userInitialized } =
     useContext(AudioPlayerContext)
   const btnRef = useRef(null)
@@ -43,10 +43,6 @@ const PlaybackControl = ({ tabIndex }) => {
 
 PlaybackControl.propTypes = {
   tabIndex: string,
-}
-
-PlaybackControl.defaultProps = {
-  tabIndex: '0',
 }
 
 export { PlaybackControl }

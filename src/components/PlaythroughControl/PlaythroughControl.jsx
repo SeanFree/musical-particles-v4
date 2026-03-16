@@ -3,7 +3,7 @@ import { useContext, useEffect, useMemo } from 'react'
 import { AudioPlayerContext, Icon } from '@/components'
 import { string } from 'prop-types'
 
-const PlaythroughControl = ({ tabIndex }) => {
+const PlaythroughControl = ({ tabIndex = '0' }) => {
   const {
     changePlaythroughType,
     currentTrack,
@@ -39,10 +39,6 @@ const PlaythroughControl = ({ tabIndex }) => {
 
 PlaythroughControl.propTypes = {
   tabIndex: string,
-}
-
-PlaythroughControl.defaultProps = {
-  tabIndex: '0',
 }
 
 export { PlaythroughControl }

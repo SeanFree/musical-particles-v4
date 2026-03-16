@@ -6,18 +6,18 @@ import { classNames, clamp, fadeIn, nearestMultiple, noop } from '@/utils'
 import './Range.scss'
 
 const Range = ({
-  activeUpdate,
+  activeUpdate = false,
+  hideLabel = false,
+  minValue = 0,
+  maxValue = 1,
+  scrollable = false,
+  step = 0.1,
+  tabIndex = '0',
+  value = 0,
   className,
   handleChange,
-  hideLabel,
   id,
   labelText,
-  value,
-  maxValue,
-  minValue,
-  scrollable,
-  step,
-  tabIndex,
 }) => {
   const [isMouseDown, setIsMouseDown] = useState(false)
   const inputRef = useRef(null)
@@ -152,17 +152,6 @@ Range.propTypes = {
   minValue: number,
   maxValue: number,
   value: number,
-}
-
-Range.defaultProps = {
-  activeUpdate: false,
-  hideLabel: false,
-  minValue: 0,
-  maxValue: 1,
-  scrollable: false,
-  step: 0.1,
-  tabIndex: '0',
-  value: 0,
 }
 
 export { Range }

@@ -5,18 +5,18 @@ import { classNames, noop } from '@/utils'
 import './Button.scss'
 
 const Button = ({
-  ariaExpanded,
-  ariaHasPopup,
+  ariaExpanded = false,
+  ariaHasPopup = false,
+  handleClick = noop,
+  handleKeyDown = noop,
+  size = 'm',
+  tabIndex = '0',
+  type = 'primary',
   ariaLabelText,
   children,
   className,
-  handleClick,
-  handleKeyDown,
   id,
   name,
-  size,
-  tabIndex,
-  type,
 }) => {
   const classes = classNames({
     'mp-button': true,
@@ -56,15 +56,4 @@ Button.propTypes = {
   tabIndex: string,
   type: oneOf(['primary', 'secondary', 'inline']),
 }
-
-Button.defaultProps = {
-  ariaExpanded: false,
-  ariaHasPopup: false,
-  handleClick: noop,
-  handleKeyDown: noop,
-  size: 'm',
-  tabIndex: '0',
-  type: 'primary',
-}
-
 export { Button }

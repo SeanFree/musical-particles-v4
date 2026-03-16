@@ -4,14 +4,14 @@ import { classNames, noop } from '@/utils'
 import './Checkbox.scss'
 
 const Checkbox = ({
-  alignRight,
+  alignRight = false,
+  handleChange = noop,
+  hideLabel = false,
+  isChecked = false,
+  tabIndex = '0',
   className,
-  handleChange,
-  hideLabel,
   id,
-  isChecked,
   labelText,
-  tabIndex,
 }) => {
   const checkboxClasses = classNames({
     'mp-checkbox': true,
@@ -57,14 +57,6 @@ Checkbox.propTypes = {
   isChecked: bool,
   labelText: string.isRequired,
   tabIndex: string,
-}
-
-Checkbox.defaultProps = {
-  alignRight: false,
-  handleChange: noop,
-  hideLabel: false,
-  isChecked: false,
-  tabIndex: '0',
 }
 
 export { Checkbox }

@@ -3,7 +3,13 @@ import { classNames } from '@/utils'
 
 import './Overlay.scss'
 
-const Overlay = ({ className, children, handleClick, isModal, isOpen }) => {
+const Overlay = ({
+  className,
+  children,
+  handleClick,
+  isModal = false,
+  isOpen = false,
+}) => {
   const classList = classNames({
     'mp-overlay': true,
     'mp-overlay--open': isOpen,
@@ -27,11 +33,6 @@ Overlay.propTypes = {
   handleClick: func,
   isOpen: bool,
   isModal: bool,
-}
-
-Overlay.defaultProps = {
-  isOpen: false,
-  isModal: false,
 }
 
 export { Overlay }

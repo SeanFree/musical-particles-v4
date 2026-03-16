@@ -6,7 +6,13 @@ import { classNames, noop } from '@/utils'
 
 import './Modal.scss'
 
-const Modal = ({ className, children, disableClose, id, handleClose }) => {
+const Modal = ({
+  className = '',
+  children,
+  disableClose = false,
+  id,
+  handleClose = noop,
+}) => {
   const { close, isOpen } = useContext(MenuContext)
   const closeRef = useRef(null)
   const _isOpen = isOpen(id)
@@ -58,12 +64,6 @@ Modal.propTypes = {
   id: string.isRequired,
   isOpen: bool,
   handleClose: func,
-}
-
-Modal.defaultProps = {
-  disableClose: false,
-  isOpen: false,
-  handleClose: noop,
 }
 
 export { Modal }

@@ -6,7 +6,7 @@ import { TRACK_INFO_MODAL_ID } from '@/constants'
 
 import './TrackInfo.scss'
 
-const TrackInfo = ({ tabIndex }) => {
+const TrackInfo = ({ tabIndex = '0' }) => {
   const { currentTrack, isEditingTrack, trackList, userInitialized } =
     useContext(AudioPlayerContext)
   const { open, isOpen, toggle } = useContext(MenuContext)
@@ -64,10 +64,6 @@ const TrackInfo = ({ tabIndex }) => {
 
 TrackInfo.propTypes = {
   tabIndex: string,
-}
-
-TrackInfo.defaultProps = {
-  tabIndex: '0',
 }
 
 export { TrackInfo }

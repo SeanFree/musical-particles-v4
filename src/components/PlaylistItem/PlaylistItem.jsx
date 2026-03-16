@@ -7,7 +7,14 @@ import { classNames } from '@/utils'
 
 import './PlaylistItem.scss'
 
-const PlaylistItem = ({ album, artist, artwork, index, tabIndex, title }) => {
+const PlaylistItem = ({
+  album,
+  artist,
+  artwork,
+  index,
+  tabIndex = '0',
+  title,
+}) => {
   const [isEditing, setIsEditing] = useState(false)
   const [formData, setFormData] = useState({
     artist,
@@ -196,10 +203,6 @@ PlaylistItem.propTypes = {
   index: number,
   tabIndex: string,
   title: string,
-}
-
-PlaylistItem.defaultProps = {
-  tabIndex: '0',
 }
 
 export { PlaylistItem }

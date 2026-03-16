@@ -3,7 +3,7 @@ import { useContext, useEffect, useMemo } from 'react'
 import { oneOf, string } from 'prop-types'
 import { AudioPlayerContext, Icon } from '@/components'
 
-const SkipControl = ({ tabIndex, type }) => {
+const SkipControl = ({ tabIndex = '0', type }) => {
   const iconName = `skip_${type}`
   const { playlistIndex, skipPrev, skipNext, trackList, userInitialized } =
     useContext(AudioPlayerContext)
@@ -37,10 +37,6 @@ const SkipControl = ({ tabIndex, type }) => {
 SkipControl.propTypes = {
   tabIndex: string,
   type: oneOf(['previous', 'next']),
-}
-
-SkipControl.defaultProps = {
-  tabIndex: '0',
 }
 
 export { SkipControl }

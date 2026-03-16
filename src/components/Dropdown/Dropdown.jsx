@@ -11,7 +11,7 @@ const Dropdown = ({
   labelText,
   name,
   options,
-  tabIndex,
+  tabIndex = '',
 }) => {
   const dropdownClasses = classNames({
     'mp-dropdown': true,
@@ -57,10 +57,6 @@ Dropdown.propTypes = {
     }),
   ),
   tabIndex: string,
-}
-
-Dropdown.defaultProps = {
-  tabIndex: '0',
 }
 
 export { Dropdown }

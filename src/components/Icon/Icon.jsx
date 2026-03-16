@@ -3,7 +3,7 @@ import { classNames } from '@/utils'
 
 import './Icon.scss'
 
-const Icon = ({ className, name, size }) => {
+const Icon = ({ className, name, size = 'm' }) => {
   const classList = classNames({
     'material-symbols-outlined': true,
     'mp-icon': true,
@@ -22,10 +22,6 @@ const Icon = ({ className, name, size }) => {
 Icon.propTypes = {
   name: string.isRequired,
   size: oneOf(['xs', 's', 'm', 'l', 'xl', '2xl', '3xl']),
-}
-
-Icon.defaultProps = {
-  size: 'm',
 }
 
 export { Icon }
