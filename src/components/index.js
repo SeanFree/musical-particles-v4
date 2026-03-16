@@ -1,6 +1,9 @@
 export { AudioPlayerContext, AudioCore } from './AudioCore/AudioCore'
 export { MenuContext, MenuProvider } from './MenuProvider/MenuProvider'
-export { ParticleContext, ParticleProvider } from './ParticleProvider/ParticleProvider'
+export {
+  ParticleContext,
+  ParticleProvider,
+} from './ParticleProvider/ParticleProvider'
 
 export { Icon } from './Icon/Icon'
 export { Overlay } from './Overlay/Overlay'

@@ -1,8 +1,10 @@
-const classNames = classMap =>
-	Object.entries(classMap)
-		.reduce((classString, [className, condition]) =>
-			classString.concat(condition ? ` ${className}` : '')
-		, '')
+const classNames = (classMap) =>
+  Object.entries(classMap)
+    .reduce(
+      (classString, [className, condition]) =>
+        classString.concat(condition ? ` ${className}` : ''),
+      '',
+    )
     .trim()
 
 export { classNames }

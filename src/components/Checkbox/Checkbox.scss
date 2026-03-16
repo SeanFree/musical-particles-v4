@@ -1,50 +1,50 @@
 $checkbox-check-area-size: $size-m;
 
 .mp-checkbox {
-	cursor: pointer;
-	position: relative;
+  cursor: pointer;
+  position: relative;
 
-	&__label {
+  &__label {
     align-items: center;
-		display: flex;
-		outline: none;
+    display: flex;
+    outline: none;
     position: relative;
 
-		&::after,
-		&::before {
-			content: "";
-			cursor: pointer;
-			display: inline-block;
-		}
+    &::after,
+    &::before {
+      content: '';
+      cursor: pointer;
+      display: inline-block;
+    }
 
-		&::after {
-			border: solid $cyan-2;
-			border-width: 0 0 2px 2px;
-			height: 4px;
-			left: 10px;
-			opacity: 0;
-			position: absolute;
-			transform: translateY(-50%) translateX(-50%) rotate(-45deg);
-			transition: opacity $transition-duration-s;
-			top: 7px;
-			width: 10px;
-			z-index: 100;
-		}
+    &::after {
+      border: solid $cyan-2;
+      border-width: 0 0 2px 2px;
+      height: 4px;
+      left: 10px;
+      opacity: 0;
+      position: absolute;
+      transform: translateY(-50%) translateX(-50%) rotate(-45deg);
+      transition: opacity $transition-duration-s;
+      top: 7px;
+      width: 10px;
+      z-index: 100;
+    }
 
-		&::before {
-			background: $gray-9;
-			border: 1px solid $gray-8;
-			border-radius: $space-xs;
+    &::before {
+      background: $gray-9;
+      border: 1px solid $gray-8;
+      border-radius: $space-xs;
       height: $checkbox-check-area-size;
       left: 0;
-			top: 0;
-			width: $checkbox-check-area-size;
-		}
-	}
+      top: 0;
+      width: $checkbox-check-area-size;
+    }
+  }
 
-	&:focus-within &__label::before {
-		filter: drop-shadow(0 0 4px $white);
-	}
+  &:focus-within &__label::before {
+    filter: drop-shadow(0 0 4px $white);
+  }
 
   &__label-text {
     margin-left: $space-l;
@@ -66,13 +66,13 @@ $checkbox-check-area-size: $size-m;
     right: -3px;
   }
 
-	&__input {
+  &__input {
     margin: 0;
     position: absolute;
-		visibility: hidden;
-	}
+    visibility: hidden;
+  }
 
-	&__input:checked + &__label::after {
-		opacity: 1;
-	}
+  &__input:checked + &__label::after {
+    opacity: 1;
+  }
 }
