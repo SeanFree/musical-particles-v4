@@ -1,6 +1,7 @@
-const pad = (v, n, c) => `${c.toString().repeat(n)}${v}`.slice(-n)
+export const pad = (v: string | number, n: number, c: string | number) =>
+  `${c.toString().repeat(n)}${v}`.slice(-n)
 
-const hhmmss = (s) => {
+export const hhmmss = (s: number) => {
   const m = (s / 60) | 0
   const h = (m / 60) | 0
   const HH = h ? `${pad(h, 2, '0')}:` : ''
@@ -9,5 +10,3 @@ const hhmmss = (s) => {
 
   return `${HH}${MM}:${SS}`
 }
-
-export { pad, hhmmss }

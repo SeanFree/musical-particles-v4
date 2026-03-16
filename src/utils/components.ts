@@ -1,4 +1,4 @@
-const classNames = (classMap) =>
+export const classNames = (classMap: Record<string, string>) =>
   Object.entries(classMap)
     .reduce(
       (classString, [className, condition]) =>
@@ -6,5 +6,3 @@ const classNames = (classMap) =>
       '',
     )
     .trim()
-
-export { classNames }

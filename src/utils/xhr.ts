@@ -2,9 +2,9 @@ import axios from 'axios'
 
 const hostUrl = 'https://mp-app-v4.s3.amazonaws.com/'
 
-const fetchFile = async (fileName) => {
+export const fetchFile = async (fileName: string) => {
   try {
-    const { status, statusText, data } = await axios.get(
+    const { status, statusText, data } = await axios.get<Blob>(
       `${hostUrl}${fileName}`,
       {
         responseType: 'blob',
@@ -22,5 +22,3 @@ const fetchFile = async (fileName) => {
     return null
   }
 }
-
-export { fetchFile }

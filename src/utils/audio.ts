@@ -1,24 +1,37 @@
 import jsmediatags from 'jsmediatags'
-import { bufferToObjectURL, floor } from '.'
+import { floor } from './math'
+import { bufferToObjectURL } from './blob'
 
-const getSpectrumWidth = (frequency, nyquist, domainLength) =>
-  floor((frequency / nyquist) * domainLength)
+export interface AudioTags {
+  artwork: string | null
+  artist: string
+  album: string
+  title: string
+  year: string
+  genre: string
+}
 
-const audioFileReader = {
-  validate(file) {
+export const getSpectrumWidth = (
+  frequency: number,
+  nyquist: number,
+  domainLength: number,
+) => floor((frequency / nyquist) * domainLength)
+
+export const audioFileReader = {
+  validate(file: File) {
     const audio = document.createElement('audio')
 
     return audio.canPlayType(file.type)
   },
-  parseFileData(file) {
+  parseFileData(file: File) {
     return window.URL.createObjectURL(file)
   },
-  getTrackDuration(data) {
+  getTrackDuration(url: string) {
     return new Promise((resolve) => {
       const audio = document.createElement('audio')
 
       audio.addEventListener('loadeddata', done)
-      audio.src = data
+      audio.src = url
 
       function done() {
         const { duration } = audio
@@ -29,7 +42,7 @@ const audioFileReader = {
       }
     })
   },
-  getFileTags(file) {
+  getFileTags(file: File): Promise<AudioTags> {
     return new Promise((resolve, reject) => {
       jsmediatags.read(file, {
         onSuccess(result) {
@@ -44,8 +57,7 @@ const audioFileReader = {
             },
           } = result
 
-          const artwork =
-            picture && bufferToObjectURL(picture.data, picture.format)
+          const artwork = picture && bufferToObjectURL(picture.data)
 
           resolve({
             artwork,
@@ -60,7 +72,7 @@ const audioFileReader = {
       })
     })
   },
-  async readFile(file) {
+  async readFile(file: File) {
     if (!this.validate(file)) {
       return Promise.reject(
         new TypeError(`Could not load file with type: ${file.type}`),
@@ -78,5 +90,3 @@ const audioFileReader = {
     }
   },
 }
-
-export { getSpectrumWidth, audioFileReader }

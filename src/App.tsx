@@ -1,4 +1,4 @@
-import { MODAL_IDS, SLIDER_MENU_IDS } from './constants'
+import { MODAL_IDS, SLIDER_MENU_IDS } from '@/constants'
 import {
   AppInfoModal,
   AppMenu,
@@ -12,9 +12,7 @@ import {
   ParticleProvider,
   PlaylistMenu,
   TrackInfoModal,
-} from './components'
-
-// ---
+} from '@/components'
 
 import './styles/app.scss'
 
@@ -48,5 +46,3 @@ const App = () => {
 }
 
 export default App
-
-// ReactDOM.render(<App/>, document.getElementById('root'))

@@ -13,7 +13,7 @@ import {
   randRange,
   clamp,
   norm,
-  PropsArray,
+  Attributes,
 } from '@/utils'
 
 class ParticleRenderer {
@@ -84,9 +84,9 @@ class ParticleRenderer {
   createParticles() {
     this.particleCount = this.reader.binCount * 4
 
-    this.positions = new PropsArray(this.particleCount, ['x', 'y', 'z'])
-    this.frequencyValues = new PropsArray(this.particleCount, ['f'])
-    this.ages = new PropsArray(this.particleCount, ['age', 'life'])
+    this.positions = new Attributes(this.particleCount, ['x', 'y', 'z'])
+    this.frequencyValues = new Attributes(this.particleCount, ['f'])
+    this.ages = new Attributes(this.particleCount, ['age', 'life'])
   }
   createPosition(v, i) {
     let r, p, t, td, x, y, z
