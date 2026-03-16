@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { bool, func, oneOf, string } from 'prop-types'
 import { classNames, noop } from '@/utils'
 
@@ -16,13 +16,13 @@ const Button = ({
   name,
   size,
   tabIndex,
-  type
+  type,
 }) => {
   const classes = classNames({
     'mp-button': true,
     [`mp-button--${size}`]: true,
     [`mp-button--${type}`]: true,
-    [className]: !!className
+    [className]: !!className,
   })
   const btnRef = useRef(null)
 
@@ -37,7 +37,10 @@ const Button = ({
       name={name}
       onKeyDown={handleKeyDown}
       ref={btnRef}
-      tabIndex={tabIndex}>{children}</button>
+      tabIndex={tabIndex}
+    >
+      {children}
+    </button>
   )
 }
 
@@ -51,7 +54,7 @@ Button.propTypes = {
   id: string.isRequired,
   size: oneOf(['s', 'm', 'l']),
   tabIndex: string,
-  type: oneOf(['primary', 'secondary', 'inline'])
+  type: oneOf(['primary', 'secondary', 'inline']),
 }
 
 Button.defaultProps = {
@@ -61,7 +64,7 @@ Button.defaultProps = {
   handleKeyDown: noop,
   size: 'm',
   tabIndex: '0',
-  type: 'primary'
+  type: 'primary',
 }
 
 export { Button }

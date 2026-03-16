@@ -1,85 +1,85 @@
 .mp-particle-menu {
-	background: transparent;
-	display: flex;
-	flex-direction: column;
-	font-size: $size-s;
-	padding: 0;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  font-size: $size-s;
+  padding: 0;
 
-	&.mp-slider-menu--open {
-		opacity: 1;
-	}
+  &.mp-slider-menu--open {
+    opacity: 1;
+  }
 
-	&__items {
-		height: 100%;
-		overflow-y: auto;
+  &__items {
+    height: 100%;
+    overflow-y: auto;
 
-		&::-webkit-scrollbar {
-			width: $space-s;
-		}
+    &::-webkit-scrollbar {
+      width: $space-s;
+    }
 
-		&::-webkit-scrollbar-track {
-			background-color: $gray-10;
-		}
+    &::-webkit-scrollbar-track {
+      background-color: $gray-10;
+    }
 
-		&::-webkit-scrollbar-thumb {
-			background-color: $gray-7;
-		}
-	}
+    &::-webkit-scrollbar-thumb {
+      background-color: $gray-7;
+    }
+  }
 
-	&__item {
-		align-items: center;
-		background: $gray-10;
-		display: flex;
-		opacity: 0.75;
-		padding: $space-m $space-l;
-		transition: opacity $transition-duration-s;
-		user-select: none;
+  &__item {
+    align-items: center;
+    background: $gray-10;
+    display: flex;
+    opacity: 0.75;
+    padding: $space-m $space-l;
+    transition: opacity $transition-duration-s;
+    user-select: none;
 
-		> * {
-			width: 100%;
-		}
+    > * {
+      width: 100%;
+    }
 
-		&:not(:last-child) {
-			border-bottom: 1px solid $gray-9;
-		}
+    &:not(:last-child) {
+      border-bottom: 1px solid $gray-9;
+    }
 
-		&:hover,
-		&:focus-within {
-			opacity: 1;
-		}
-	}
+    &:hover,
+    &:focus-within {
+      opacity: 1;
+    }
+  }
 
-	&__dropdown {
-		align-items: center;
-		display: flex;
-		justify-content: space-between;
-	}
+  &__dropdown {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
 
-	&__range {
-		align-items: center;
-		display: flex;
-		justify-content: space-between;
-		margin-right: $space-m;
+  &__range {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-right: $space-m;
 
-		.mp-range__label {
-			margin-right: $space-l;
-		}
+    .mp-range__label {
+      margin-right: $space-l;
+    }
 
-		.mp-range__track {
-			width: 120px;
-		}
-	}
+    .mp-range__track {
+      width: 120px;
+    }
+  }
 
-	&__label {
-		margin-right: $space-xl;
-	}
+  &__label {
+    margin-right: $space-xl;
+  }
 
-	&__value {
-		background: $gray-9;
-		border: 1px solid $gray-8;
-		border-radius: 2px;
-		padding: $space-s;
-		text-align: right;
-		width: $space-xl * 1.25;
-	}
+  &__value {
+    background: $gray-9;
+    border: 1px solid $gray-8;
+    border-radius: 2px;
+    padding: $space-s;
+    text-align: right;
+    width: $space-xl * 1.25;
+  }
 }
