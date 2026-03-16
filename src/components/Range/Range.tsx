@@ -58,8 +58,8 @@ export const Range: FC<RangeProps> = ({
     shouldUpdate: boolean,
   ) => {
     if (shouldUpdate) {
-      const { offsetWidth, getBoundingClientRect } = target as HTMLElement
-      const { x } = getBoundingClientRect()
+      const { offsetWidth } = target as HTMLElement
+      const { x } = (target as HTMLElement).getBoundingClientRect()
       const offsetX = clientX - x
 
       handleChange(
