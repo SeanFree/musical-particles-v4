@@ -2,13 +2,19 @@ import jsmediatags from 'jsmediatags'
 import { floor } from './math'
 import { bufferToObjectURL } from './blob'
 
-export interface AudioTags {
+export interface AudioMetadata {
   artwork: string | null
   artist: string
   album: string
   title: string
   year: string
   genre: string
+}
+
+export interface AudioTrack extends AudioMetadata {
+  src: string
+  duration: number
+  index?: number
 }
 
 export const getSpectrumWidth = (
@@ -18,15 +24,15 @@ export const getSpectrumWidth = (
 ) => floor((frequency / nyquist) * domainLength)
 
 export const audioFileReader = {
-  validate(file: File) {
+  validate(file: File | Blob) {
     const audio = document.createElement('audio')
 
     return audio.canPlayType(file.type)
   },
-  parseFileData(file: File) {
+  parseFileData(file: File | Blob) {
     return window.URL.createObjectURL(file)
   },
-  getTrackDuration(url: string) {
+  getTrackDuration(url: string): Promise<number> {
     return new Promise((resolve) => {
       const audio = document.createElement('audio')
 
@@ -42,14 +48,14 @@ export const audioFileReader = {
       }
     })
   },
-  getFileTags(file: File): Promise<AudioTags> {
+  getFileTags(file: File | Blob): Promise<AudioMetadata> {
     return new Promise((resolve, reject) => {
       jsmediatags.read(file, {
         onSuccess(result) {
           const {
             tags: {
               artist = 'Artist Unknown',
-              title = file.name,
+              title = file instanceof File ? file.name : 'Title Unknown',
               picture = null,
               album = 'Album Unknown',
               year = 'Year Unknown',
@@ -72,18 +78,18 @@ export const audioFileReader = {
       })
     })
   },
-  async readFile(file: File) {
+  async readFile(file: File | Blob): Promise<AudioTrack> {
     if (!this.validate(file)) {
       return Promise.reject(
         new TypeError(`Could not load file with type: ${file.type}`),
       )
     } else {
-      const data = this.parseFileData(file)
-      const duration = await this.getTrackDuration(data)
+      const src = this.parseFileData(file)
+      const duration = await this.getTrackDuration(src)
       const tags = await this.getFileTags(file)
 
       return {
-        data,
+        src,
         duration,
         ...tags,
       }

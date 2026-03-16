@@ -8,8 +8,7 @@ export type AttributesIteratorFunc<R = void> = (
 export class Attributes {
   readonly count: number
   readonly keys: string[]
-
-  private values: Float32Array
+  readonly values: Float32Array
 
   constructor(count: number, keys: string[]) {
     this.count = count

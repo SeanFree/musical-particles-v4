@@ -24,7 +24,10 @@ Float32Array.prototype.get = function (index = 0, spread = 0) {
 
 export const shuffle = (arr: any[]) => arr.slice().sort(() => randRange(1))
 
-export const sortByAsc = (
-  arr: Record<string | number, number>[],
-  key: string,
-) => arr.slice().sort((a, b) => (a[key] < b[key] ? -1 : 1))
+export const sortByAsc = <
+  T extends Record<any, any>[],
+  K extends keyof T[number],
+>(
+  arr: T,
+  key: K,
+): T => arr.slice().sort((a, b) => `${a[key]}`.localeCompare(`${b[key]}`)) as T

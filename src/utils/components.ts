@@ -1,4 +1,4 @@
-export const classNames = (classMap: Record<string, string>) =>
+export const classNames = (classMap: Record<string, boolean>) =>
   Object.entries(classMap)
     .reduce(
       (classString, [className, condition]) =>
