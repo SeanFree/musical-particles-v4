@@ -118,21 +118,17 @@ export class ParticleRenderer {
     this._run = this.run.bind(this)
     this.timer = new THREE.Timer()
 
-    this.createScene()
-    this.createCamera()
+    this.scene = new THREE.Scene()
+
     this.createRenderer()
+    this.createCamera()
     this.createParticles()
     await this.createMesh()
-
-    this.controls = new OrbitControls(this.camera!, this.renderer!.domElement)
 
     this.resize()
     window.addEventListener('resize', this.resize.bind(this))
 
     this.run()
-  }
-  createScene() {
-    this.scene = new THREE.Scene()
   }
   createCamera() {
     this.camera = new THREE.PerspectiveCamera(
@@ -141,7 +137,9 @@ export class ParticleRenderer {
       0.1,
       100000,
     )
-    this.camera.position.z = 500
+    this.camera.position.z = 400
+
+    this.controls = new OrbitControls(this.camera!, this.renderer!.domElement)
   }
   createRenderer() {
     this.renderer = new THREE.WebGLRenderer({

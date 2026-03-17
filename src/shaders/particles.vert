@@ -48,7 +48,7 @@ void main() {
 
   float size = u_particleSizeMin +
     length(displacement) *
-    (u_particleSizeScale * 10.);
+    (u_particleSizeScale * 6.);
 
   gl_PointSize = size * (size / -mvPosition.z);
   gl_Position = projectionMatrix * mvPosition;

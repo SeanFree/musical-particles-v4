@@ -34,7 +34,7 @@ const defaultOptions: ParticleRendererOptions = {
   fov: 70,
   positioning: 'random',
   particleTexture: 'as-tex-1',
-  particleDirection: -1,
+  particleDirection: 1,
   particleSpeed: 3,
   spawnRadius: 700,
   spawnSpread: 200,
@@ -49,7 +49,7 @@ const defaultOptions: ParticleRendererOptions = {
   applyNoise: true,
   noiseScale: 4,
   displacementScale: 0.5,
-  displacementDirection: 1,
+  displacementDirection: -1,
   frequencyScale: 4.25,
   frequencyAvgScale: 3.5,
 }
@@ -87,14 +87,6 @@ const ParticleProvider: FC<PropsWithChildren> = ({ children }) => {
     options,
     setOption,
   }
-
-  // useEffect(() => {
-  // 	const blurActiveElement = () => document.activeElement.blur()
-
-  // 	canvasRef.current.addEventListener('mousedown', blurActiveElement)
-
-  // 	return () => canvasRef.current.removeEventListener('mousedown', blurActiveElement)
-  // }, [audioReady])
 
   useEffect(() => {
     if (audioReady) {
