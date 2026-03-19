@@ -6,7 +6,7 @@ import './Dropdown.scss'
 export interface DropdownItem {
   id: string
   text: string
-  value: string
+  value: string | number
 }
 
 export interface DropdownProps {
@@ -18,6 +18,7 @@ export interface DropdownProps {
   options: DropdownItem[]
   tabIndex?: number
   labelText: string
+  value?: string | number
 }
 
 export const Dropdown: FC<DropdownProps> = ({
@@ -29,6 +30,7 @@ export const Dropdown: FC<DropdownProps> = ({
   name,
   options,
   tabIndex = 0,
+  value = undefined,
 }) => {
   const dropdownClasses = classNames({
     'mp-dropdown': true,
@@ -51,9 +53,14 @@ export const Dropdown: FC<DropdownProps> = ({
         name={name || id}
         tabIndex={tabIndex}
       >
-        {options.map(({ id, text, value }) => (
-          <option key={id} id={id} value={value}>
-            {text || value}
+        {options.map(({ id, text, value: optionValue }) => (
+          <option
+            key={id}
+            id={id}
+            value={optionValue}
+            selected={value === optionValue}
+          >
+            {text || optionValue}
           </option>
         ))}
       </select>

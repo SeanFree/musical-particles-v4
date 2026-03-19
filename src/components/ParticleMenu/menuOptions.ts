@@ -74,12 +74,12 @@ export const particleTextureOptions: DropdownItem[] = [
 export const particleDirectionOptions: DropdownItem[] = [
   {
     id: 'opt-p-dir-outward',
-    value: '-1',
+    value: -1,
     text: 'Outward',
   },
   {
     id: 'opt-p-dir-inward',
-    value: '1',
+    value: 1,
     text: 'Inward',
   },
 ]
@@ -87,12 +87,12 @@ export const particleDirectionOptions: DropdownItem[] = [
 export const displacementDirectionOptions: DropdownItem[] = [
   {
     id: 'opt-d-dir-outward',
-    value: '1',
+    value: 1,
     text: 'Outward',
   },
   {
     id: 'opt-d-dir-inward',
-    value: '-1',
+    value: -1,
     text: 'Inward',
   },
 ]

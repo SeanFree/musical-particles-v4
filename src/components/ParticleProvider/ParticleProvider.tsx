@@ -46,7 +46,7 @@ const defaultOptions: ParticleRendererOptions = {
   particleLifeMax: 500,
   particleSizeMin: 40,
   particleSizeScale: 2,
-  applyNoise: true,
+  applyNoise: 1,
   noiseScale: 4,
   displacementScale: 0.5,
   displacementDirection: -1,

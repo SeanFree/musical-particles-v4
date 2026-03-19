@@ -1,4 +1,5 @@
 .mp-slider-menu {
+  backdrop-filter: blur($space-xs);
   background: $gray-10;
   border-bottom-left-radius: 4px;
   max-height: calc(100vh - #{$space-2xl + $space-m});

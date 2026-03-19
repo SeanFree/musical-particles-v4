@@ -42,7 +42,7 @@ export type ParticleRendererOptions = {
   particleLifeMax: number
   particleSizeMin: number
   particleSizeScale: number
-  applyNoise: boolean
+  applyNoise: number
   noiseScale: number
   displacementScale: number
   displacementDirection: number

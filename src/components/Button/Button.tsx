@@ -14,6 +14,7 @@ export interface ButtonProps {
   handleClick?: () => void
   handleKeyDown?: () => {}
   id: string
+  rounded?: boolean
   size?: ButtonSize
   tabIndex?: number
   variant: ButtonVariant
@@ -31,6 +32,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   ariaLabelText,
   children,
   className = '',
+  rounded = false,
   id,
   name,
 }) => {
@@ -38,6 +40,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
     'mp-button': true,
     [`mp-button--${size}`]: true,
     [`mp-button--${variant}`]: true,
+    [`mp-button--rounded`]: rounded,
     [className]: !!className,
   })
   const btnRef = useRef(null)

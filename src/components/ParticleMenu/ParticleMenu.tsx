@@ -74,6 +74,7 @@ export const ParticleMenu = () => {
               labelText="Particle Texture"
               options={particleTextureOptions}
               tabIndex={tabIndex}
+              value={options?.particleTexture}
             />
           </li>
           <li className="mp-particle-menu__item">
@@ -84,6 +85,7 @@ export const ParticleMenu = () => {
               labelText="Particle Positioning"
               options={positioningOptions}
               tabIndex={tabIndex}
+              value={options?.positioning}
             />
           </li>
           <li className="mp-particle-menu__item">
@@ -94,6 +96,7 @@ export const ParticleMenu = () => {
               labelText="Particle Direction"
               options={particleDirectionOptions}
               tabIndex={tabIndex}
+              value={options?.particleDirection}
             />
           </li>
           <li className="mp-particle-menu__item">
@@ -299,9 +302,9 @@ export const ParticleMenu = () => {
               alignRight
               className="mp-particle-menu__checkbox"
               id="chk-apply-noise"
-              isChecked={options!.applyNoise}
+              isChecked={Boolean(options!.applyNoise)}
               labelText="Apply Noise"
-              handleChange={(isChecked) => setOption('applyNoise', isChecked)}
+              handleChange={(isChecked) => setOption('applyNoise', +isChecked)}
               tabIndex={tabIndex}
             />
           </li>
@@ -351,6 +354,7 @@ export const ParticleMenu = () => {
               labelText="Displacement Direction"
               options={displacementDirectionOptions}
               tabIndex={tabIndex}
+              value={options?.displacementDirection}
             />
           </li>
           <li className="mp-particle-menu__item">

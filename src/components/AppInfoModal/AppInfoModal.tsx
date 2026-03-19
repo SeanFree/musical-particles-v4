@@ -82,6 +82,7 @@ export const AppInfoModal: FC = () => {
               id="btn-start"
               variant="primary"
               size="l"
+              rounded
               handleClick={handleClose}
             >
               Start

@@ -1,11 +1,13 @@
 .mp-modal {
+  backdrop-filter: blur($space-xs);
+
   &--disable-close .mp-overlay__background {
     pointer-events: none;
   }
 
   &__body {
     background-color: $gray-10;
-    border-radius: $space-s;
+    border-radius: $space-l;
     display: inline-block;
     left: 50%;
     opacity: 0.75;

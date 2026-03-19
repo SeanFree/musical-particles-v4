@@ -46,4 +46,8 @@
     margin: 0;
     padding: 0;
   }
+
+  &--rounded {
+    border-radius: 9999px;
+  }
 }

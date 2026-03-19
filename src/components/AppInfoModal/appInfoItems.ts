@@ -5,7 +5,7 @@ interface AppInfoItem {
 
 export const items: AppInfoItem[] = [
   {
-    description: 'Show / Hide App Controls',
+    description: 'Show / Hide App Info',
     binding: 'alt + u',
   },
   {
