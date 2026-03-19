@@ -14,8 +14,6 @@ import {
   TrackInfoModal,
 } from '@/components'
 
-import './styles/app.scss'
-
 const App = () => {
   window.focus()
 
