@@ -11,8 +11,11 @@
   }
 
   &__disclaimer {
-    max-width: 396px;
-    padding: $space-xl 0;
+    border-radius: $size-xl;
+    background-color: transparentize($color: $amber-4, $amount: 0.8);
+    margin: $space-l auto;
+    max-width: 480px;
+    padding: $space-xl;
     font-size: $size-s;
     font-style: italic;
     font-weight: bold;
@@ -27,7 +30,6 @@
 
   &__item {
     justify-content: space-between;
-    border-bottom: 1px solid $gray-8;
     display: flex;
     padding: $space-l 0;
 

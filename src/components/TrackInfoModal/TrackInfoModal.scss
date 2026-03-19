@@ -4,7 +4,7 @@
   }
 
   &__image {
-    border-radius: 4px;
+    border-radius: $space-l;
     margin-bottom: $space-l;
     overflow: hidden;
 
@@ -15,5 +15,9 @@
       position: relative;
       width: 100%;
     }
+  }
+
+  &__subtext {
+    margin-bottom: $space-m;
   }
 }

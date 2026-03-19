@@ -7,7 +7,7 @@
 
   &__body {
     background-color: $gray-10;
-    border-radius: $space-l;
+    border-radius: $space-xl;
     display: inline-block;
     left: 50%;
     opacity: 0.75;
@@ -31,7 +31,7 @@
     display: flex;
     padding: $space-xs;
     position: absolute;
-    right: -$space-m;
-    top: -$space-m;
+    right: -$space-xs;
+    top: -$space-xs;
   }
 }
