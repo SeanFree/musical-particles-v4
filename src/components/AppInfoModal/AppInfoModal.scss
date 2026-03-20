@@ -3,6 +3,7 @@
     align-items: center;
     display: flex;
     font-size: $size-2xl;
+    padding-top: $space-m;
 
     .mp-icon {
       color: $cyan-2;
@@ -31,7 +32,7 @@
   &__item {
     justify-content: space-between;
     display: flex;
-    padding: $space-l 0;
+    padding: $space-l $space-s;
 
     &:last-child {
       border: 0;
